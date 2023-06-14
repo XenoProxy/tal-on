@@ -9,7 +9,12 @@ class PolyclinicController extends Controller
 {
     public function index()
     {
-        $polys = Polyclinic::latest()->paginate(5);
-        return view('polyclinics.index', compact('polys'))->with('i', (request()->input('page', 1) - 1) * 5);
+        $polyclinics = Polyclinic::latest()->paginate(5);
+        return view('polyclinics.index', compact('polyclinics'))->with('i', (request()->input('page', 1) - 1) * 5);
     }    
+
+    public function show(Polyclinic $polyclinic)
+    {
+        return view('polyclinics.show', compact('polyclinic'));
+    }
 }

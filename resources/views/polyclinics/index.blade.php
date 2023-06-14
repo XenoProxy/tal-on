@@ -21,11 +21,14 @@
                             <th>Name</th>
                             <th>Address</th>
                         </tr>
-                        @foreach ($polys as $poly)
+                        @foreach ($polyclinics as $polyclinic)
                         <tr>
                             <td>{{ ++$i }}</td>
-                            <td>{{ $poly->name }}</td>
-                            <td>{{ $poly->address }}</td>
+                            <td>{{ $polyclinic->name }}</td>
+                            <td>{{ $polyclinic->address }}</td>                        
+                            <td>
+                                <a class="btn btn-info" href="{{ route('polyclinics.show', $polyclinic->id) }}">Show</a>
+                            </td>
                         </tr>
                         @endforeach
                     </table>
