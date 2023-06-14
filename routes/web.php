@@ -21,3 +21,4 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/polyclinics', [App\Http\Controllers\PolyclinicController::class, 'index']);
+Route::get('/doctors', [App\Http\Controllers\DoctorController::class, 'index']);
