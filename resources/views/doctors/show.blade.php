@@ -29,6 +29,12 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
+                <strong>Office:</strong>
+                {{ $doctor->office }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
                 <strong>Polyclinic:</strong>
                 <a href="{{ route('polyclinics.show', $doctor->poly_id) }}">{{ $polyclinic_name }}</a>                
             </div>
