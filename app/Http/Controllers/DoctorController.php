@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Doctor;
+use App\Models\Polyclinic;
 
 class DoctorController extends Controller
 {
@@ -15,6 +16,7 @@ class DoctorController extends Controller
 
     public function show(Doctor $doctor)
     {
-        return view('doctors.show', compact('doctor'));
+        $polyclinic_name = $doctor->polyclinic->name;
+        return view('doctors.show', compact('doctor', 'polyclinic_name'));
     }
 }

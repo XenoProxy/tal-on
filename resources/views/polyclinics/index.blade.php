@@ -17,13 +17,11 @@
                     {{ __('Our polyclinic list here') }}
                     <table class="table table-bordered">
                         <tr>
-                            <th>No</th>
                             <th>Name</th>
                             <th>Address</th>
                         </tr>
                         @foreach ($polyclinics as $polyclinic)
                         <tr>
-                            <td>{{ ++$i }}</td>
                             <td>{{ $polyclinic->name }}</td>
                             <td>{{ $polyclinic->address }}</td>                        
                             <td>

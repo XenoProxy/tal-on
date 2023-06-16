@@ -17,17 +17,17 @@
                     {{ __('Our doctors list here') }}
                     <table class="table table-bordered">
                         <tr>
-                            <th>No</th>
                             <th>Name</th>
                             <th>Field</th>
                             <th>Polyclinic</th>
                         </tr>
                         @foreach ($doctors as $doctor)
                         <tr>
-                            <td>{{ ++$i }}</td>
                             <td>{{ $doctor->name }}</td>
                             <td>{{ $doctor->field }}</td>
-                            <td>{{ $doctor->poly_id }}</td>
+                            <td>
+                                <a class="btn btn-info" href="{{ route('polyclinics.show', $doctor->poly_id) }}">{{ $doctor->polyclinic->name }}</a>
+                            </td>
                             <td>
                                 <a class="btn btn-info" href="{{ route('doctors.show', $doctor->id) }}">Show</a>
                             </td>
