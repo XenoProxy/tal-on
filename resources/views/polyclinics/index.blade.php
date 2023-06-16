@@ -25,7 +25,7 @@
                             <td>{{ $polyclinic->name }}</td>
                             <td>{{ $polyclinic->address }}</td>                        
                             <td>
-                                <a class="btn btn-info" href="{{ route('polyclinics.show', $polyclinic->id) }}">Show</a>
+                                <a class="btn btn-info" href="{{ route('polyclinics.show', $polyclinic->id) }}">Details</a>
                             </td>
                         </tr>
                         @endforeach

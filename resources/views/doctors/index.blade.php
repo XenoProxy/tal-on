@@ -26,10 +26,10 @@
                             <td>{{ $doctor->name }}</td>
                             <td>{{ $doctor->field }}</td>
                             <td>
-                                <a class="btn btn-info" href="{{ route('polyclinics.show', $doctor->poly_id) }}">{{ $doctor->polyclinic->name }}</a>
+                                <a href="{{ route('polyclinics.show', $doctor->poly_id) }}">{{ $doctor->polyclinic->name }}</a>
                             </td>
                             <td>
-                                <a class="btn btn-info" href="{{ route('doctors.show', $doctor->id) }}">Show</a>
+                                <a class="btn btn-info" href="{{ route('doctors.show', $doctor->id) }}">Details</a>
                             </td>
                         </tr>
                         @endforeach
