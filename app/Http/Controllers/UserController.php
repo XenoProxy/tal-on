@@ -14,4 +14,5 @@ class UserController extends Controller
         $polyclinic_name = $user->polyclinic->name;
         return view('account.index', compact('user', 'polyclinic_name'));
     } 
+
 }

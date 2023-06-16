@@ -15,8 +15,13 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                    
                 </div>
+
             </div>
+
+            <a class="btn btn-info" href="{{ route('tickets.create') }}">Order the ticket</a>
+            
         </div>
     </div>
 </div>

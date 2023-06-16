@@ -26,12 +26,28 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <a class="btn btn-info" href="#">Order the ticket</a>
+                <a class="btn btn-info" href="{{ route('tickets.create') }}">Order the ticket</a>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <a class="btn btn-info" href="#">Appointments</a>
+        <div class="col-xs-12 col-sm-12 col-md-8">
+            <div class="card">
+                <div class="card-header"><strong>{{ __('Appointments') }}</strong></div>
+                
+                <div class="card-body">                                
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>Doctor</th>
+                            <th>Date</th>
+                            <th>Polyclinic</th>
+                        </tr>
+                        
+                        <tr>
+                            <td>Doctor</td>
+                            <td>Date</td>
+                            <td>Polyclinic</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </div>  

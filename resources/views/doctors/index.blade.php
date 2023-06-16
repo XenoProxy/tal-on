@@ -14,7 +14,6 @@
                         </div>
                     @endif
 
-                    {{ __('Our doctors list here') }}
                     <table class="table table-bordered">
                         <tr>
                             <th>Name</th>

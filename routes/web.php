@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Auth::routes();
@@ -23,3 +23,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('polyclinics', App\Http\Controllers\PolyclinicController::class);
 Route::resource('doctors', App\Http\Controllers\DoctorController::class);
 Route::resource('account', App\Http\Controllers\UserController::class);
+Route::resource('tickets', App\Http\Controllers\TicketController::class);
+
