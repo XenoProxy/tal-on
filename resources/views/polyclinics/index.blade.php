@@ -18,14 +18,13 @@
                         <tr>
                             <th>Name</th>
                             <th>Address</th>
+                            <th>Contacts</th>
                         </tr>
                         @foreach ($polyclinics as $polyclinic)
                         <tr>
                             <td>{{ $polyclinic->name }}</td>
                             <td>{{ $polyclinic->address }}</td>                        
-                            <td>
-                                <a class="btn btn-info" href="{{ route('polyclinics.show', $polyclinic->id) }}">Details</a>
-                            </td>
+                            <td>{{ $polyclinic->phoneNumber }}</td>
                         </tr>
                         @endforeach
                     </table>
