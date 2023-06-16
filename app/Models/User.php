@@ -7,10 +7,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Polyclinic;
 
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+
+    public function polyclinic()
+    {
+        return $this->belongsTo(Polyclinic::class, 'poly_id', 'id');
+    }
 
     /**
      * The attributes that are mass assignable.

@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Doctor;
+use App\Models\User;
 
 class Polyclinic extends Model
 {
@@ -13,5 +14,10 @@ class Polyclinic extends Model
     public function doctor()
     {
         return $this->hasMany(Doctor::class);
+    }
+
+    public function user()
+    {
+        return $this->hasMany(User::class);
     }
 }
