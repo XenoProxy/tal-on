@@ -20,11 +20,12 @@
                             <th>Address</th>
                             <th>Contacts</th>
                         </tr>
+                        
                         @foreach ($polyclinics as $polyclinic)
                         <tr>
                             <td>{{ $polyclinic->name }}</td>
-                            <td>{{ $polyclinic->address }}</td>                        
-                            <td>{{ $polyclinic->phoneNumber }}</td>
+                            <td>{{ $polyclinic->address }}</td>
+                            <td>{{ $contacts[$loop->index] }}</td>
                         </tr>
                         @endforeach
                     </table>
