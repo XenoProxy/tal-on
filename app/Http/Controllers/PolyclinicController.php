@@ -19,7 +19,6 @@ class PolyclinicController extends Controller
     {
         $polyclinics = Polyclinic::all();
         $contacts = $this->contactsService->phoneNumber();
-        //dd($contacts);
         return view('polyclinics.index', compact('polyclinics', 'contacts'));
     }    
 
