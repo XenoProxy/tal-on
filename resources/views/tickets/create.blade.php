@@ -26,26 +26,42 @@
 
     <form action="" method="post">
         @csrf
-        
-        <select name="field" class="custom-select">
-            <option selected value="">Doctor field</option>
-            @foreach($doctors as $doctor)
-                <option value="{{ $doctor->field }}"  {{ $doctor->field == "Терапевт" ? 'selected' : '' }} >{{ $doctor->field }}</option>
-            @endforeach
-        </select>
-
-        
+                
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Policlinic:</strong>
-                    <input type="text" name="name" class="form-control" placeholder="Name">
+                    <strong>Polyclinic:</strong></br>
+                    <select name="polyclinic" id="polyclinic" class="custom-select">
+                        @foreach($polyclinics as $policlynic)
+                            <option value="{{ $policlynic->name }}"> {{ $policlynic->name }} </option>
+                        @endforeach
+                    </select></br>
+                    <div class="col-sm" id="js-result_p">
+                        Результат: 
+                    </div>
                 </div>
-            </div>
+            </div></br>      
+
+
             <div class="col-xs-12 col-sm-12 col-md-18">
                 <div class="form-group">
-                    <strong>Doctor:</strong>
-                    <input type="text" name="name" class="form-control" placeholder="Name">
+                    <strong>Doctor:</strong></br>      
+                    <select name="doctor_field" id="doctor_field"  class="custom-select ">
+                        @foreach($doctors as $doctor)
+                            <option class="field" value="{{ $doctor->field }}"> {{ $doctor->field }} </option>
+                        @endforeach
+                    </select></br>
+                    <div class="col-sm" id="js-result_f">
+                        Результат: 
+                    </div></br>
+
+
+
+                    <select name="doctor_name" id="doctor_name" class="custom-select">
+                        @foreach($doctors as $doctor)
+                            <option value="{{ $doctor->name }}"> {{ $doctor->name }} </option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">

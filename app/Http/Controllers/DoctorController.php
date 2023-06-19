@@ -10,8 +10,8 @@ class DoctorController extends Controller
 {
     public function index()
     {
-        $doctors = Doctor::latest()->paginate(5);
-        return view('doctors.index', compact('doctors'))->with('i', (request()->input('page', 1) - 1) * 5);
+        $doctors = Doctor::all();
+        return view('doctors.index', compact('doctors'));
     }   
 
     public function show(Doctor $doctor)

@@ -4,10 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Doctor;
+use App\Models\Polyclinic;
+
 class TicketController extends Controller
 {
-    public function create()
+    public function create(Doctor $doctors, Polyclinic $polyclinics)
     {
-        return view('tickets.create');
+        $doctors = Doctor::all();
+        $polyclinics = Polyclinic::all();
+        return view('tickets.create', compact('doctors', 'polyclinics'));
     }
 }
