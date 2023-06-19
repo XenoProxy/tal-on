@@ -26,7 +26,15 @@
 
     <form action="" method="post">
         @csrf
+        
+        <select name="field" class="custom-select">
+            <option selected value="">Doctor field</option>
+            @foreach($doctors as $doctor)
+                <option value="{{ $doctor->field }}"  {{ $doctor->field == "Терапевт" ? 'selected' : '' }} >{{ $doctor->field }}</option>
+            @endforeach
+        </select>
 
+        
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
