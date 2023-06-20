@@ -33,16 +33,21 @@
                     <strong>Polyclinic:</strong>                                         
                     <div class="col-sm" id="js-result_p"></div>
                 </div>
-            </div></br>      
-
+            </div></br>   
 
             <div class="col-xs-12 col-sm-12 col-md-18">
                 <div class="form-group">
-                    <strong>Doctor:</strong>                
-                    <div class="col-sm" id="js-result_f"></div>
+                    <strong>Doctor's field:</strong>                
+                    <div class="col-sm" id="js-result_df"></div>
                 </div>
-            </div>
-
+            </div></br>
+            
+            <div class="col-xs-12 col-sm-12 col-md-18">
+                <div class="form-group">
+                    <strong>Doctor's name:</strong>                
+                    <div class="col-sm" id="js-result_dn"></div>
+                </div>
+            </div></br> 
 
             <table class="table table-bordered" id="filter-table">
                 <tr>
@@ -51,11 +56,9 @@
                     <th>Polyclinic</th>
                 </tr>
                 <tr class='table-filters'>
+                    <td></td>
                     <td>
-                        
-                    </td>
-                    <td>
-                        <select name="doctor_field" id="doctor_field"  class="custom-select ">
+                        <select name="doctor_field" class="custom-select ">
                             <option value=""> </option>
                             @foreach($doctors as $doctor)
                                 <option class="field" value="{{ $doctor->field }}"> {{ $doctor->field }} </option>
@@ -63,7 +66,7 @@
                         </select></br>
                     </td>
                     <td>
-                        <select name="polyclinic" id="polyclinic" class="custom-select">
+                        <select name="polyclinic" class="custom-select">
                             <option value=""> </option>
                             @foreach($polyclinics as $policlynic)
                                 <option value="{{ $policlynic->name }}"> {{ $policlynic->name }} </option>
@@ -71,16 +74,22 @@
                         </select></br>
                     </td>
                 </tr>
-                
                 @foreach ($doctors as $doctor)
                 <tr class='table-data'>
-                    <td>{{ $doctor->name }}</td>
-                    <td>{{ $doctor->field }}</td>
                     <td>
-                        <a href="{{ route('polyclinics.show', $doctor->poly_id) }}">{{ $doctor->polyclinic->name }}</a>
+                        <input type="hidden" class="doctor_name" value="{{ $doctor->name }}">
+                        {{ $doctor->name }}
                     </td>
                     <td>
-                        <a class="btn btn-info" href="{{ route('doctors.show', $doctor->id) }}">Select</a>
+                        <input type="hidden" class="doctor_field" value="{{ $doctor->field }}">
+                        {{ $doctor->field }}
+                    </td>
+                    <td>
+                        <input type="hidden" class="poly_name" value="{{ $doctor->polyclinic->name }}">
+                        {{ $doctor->polyclinic->name }}
+                    </td>
+                    <td>
+                        <a class="done" id="{{ $doctor->id-1 }}" name="name">Select</a>
                     </td>
                 </tr>
                 @endforeach
