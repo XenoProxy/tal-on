@@ -24,89 +24,98 @@
         </div>
     @endif
 
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="form-group">
+            <strong>Polyclinic:</strong>                                         
+            <div class="col-sm" id="js-result_p"></div>
+        </div>
+    </div></br>   
+
+    <div class="col-xs-12 col-sm-12 col-md-18">
+        <div class="form-group">
+            <strong>Doctor's field:</strong>                
+            <div class="col-sm" id="js-result_df"></div>
+        </div>
+    </div></br>
+    
+    <div class="col-xs-12 col-sm-12 col-md-18">
+        <div class="form-group">
+            <strong>Doctor's name:</strong>                
+            <div class="col-sm" id="js-result_dn"></div>
+        </div>
+    </div></br> 
+
     <form action="" method="post">
         @csrf
                 
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Polyclinic:</strong>                                         
-                    <div class="col-sm" id="js-result_p"></div>
-                </div>
-            </div></br>   
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="card-header">{{ __('Ticket Ordering') }}</div>
 
-            <div class="col-xs-12 col-sm-12 col-md-18">
-                <div class="form-group">
-                    <strong>Doctor's field:</strong>                
-                    <div class="col-sm" id="js-result_df"></div>
-                </div>
-            </div></br>
-            
-            <div class="col-xs-12 col-sm-12 col-md-18">
-                <div class="form-group">
-                    <strong>Doctor's name:</strong>                
-                    <div class="col-sm" id="js-result_dn"></div>
-                </div>
-            </div></br> 
-
-            <table class="table table-bordered" id="filter-table">
-                <tr>
-                    <th>Name</th>
-                    <th>Field</th>
-                    <th>Polyclinic</th>
-                </tr>
-                <tr class='table-filters'>
-                    <td></td>
-                    <td>
-                        <select name="doctor_field" class="custom-select ">
-                            <option value=""> </option>
-                            @foreach($doctors as $doctor)
-                                <option class="field" value="{{ $doctor->field }}"> {{ $doctor->field }} </option>
+                    <div class="card-header">
+                        <table class="table table-bordered" id="filter-table">
+                            <tr>
+                                <th rowspan="2" >Name</th>
+                                <th>Field</th>
+                                <th>Polyclinic</th>
+                                <th rowspan="2">Select the Doctor</th>
+                            </tr>
+                            <tr class='table-filters'>
+                                <td>
+                                    Filter by Doctor's Fields
+                                    <select name="doctor_field" class="custom-select ">
+                                        <option value=""> </option>
+                                        @foreach($doctors as $doctor)
+                                            <option class="field" value="{{ $doctor->field }}"> {{ $doctor->field }} </option>
+                                        @endforeach
+                                    </select>
+                                </td>
+                                <td>
+                                    Filter by Polyclinics
+                                    <select name="polyclinic" class="custom-select">
+                                        <option value=""> </option>
+                                        @foreach($polyclinics as $policlynic)
+                                            <option value="{{ $policlynic->name }}"> {{ $policlynic->name }} </option>
+                                        @endforeach
+                                    </select>
+                                </td>
+                            </tr>
+                            @foreach ($doctors as $doctor)
+                            <tr class='table-data'>
+                                <td>
+                                    <input type="hidden" class="doctor_name" value="{{ $doctor->name }}">
+                                    {{ $doctor->name }}
+                                </td>
+                                <td>
+                                    <input type="hidden" class="doctor_field" value="{{ $doctor->field }}">
+                                    {{ $doctor->field }}
+                                </td>
+                                <td>
+                                    <input type="hidden" class="poly_name" value="{{ $doctor->polyclinic->name }}">
+                                    {{ $doctor->polyclinic->name }}
+                                </td>
+                                <td>
+                                    <a class="done" id="{{ $doctor->id-1 }}" name="name">Select</a>
+                                </td>
+                            </tr>
                             @endforeach
-                        </select></br>
-                    </td>
-                    <td>
-                        <select name="polyclinic" class="custom-select">
-                            <option value=""> </option>
-                            @foreach($polyclinics as $policlynic)
-                                <option value="{{ $policlynic->name }}"> {{ $policlynic->name }} </option>
-                            @endforeach
-                        </select></br>
-                    </td>
-                </tr>
-                @foreach ($doctors as $doctor)
-                <tr class='table-data'>
-                    <td>
-                        <input type="hidden" class="doctor_name" value="{{ $doctor->name }}">
-                        {{ $doctor->name }}
-                    </td>
-                    <td>
-                        <input type="hidden" class="doctor_field" value="{{ $doctor->field }}">
-                        {{ $doctor->field }}
-                    </td>
-                    <td>
-                        <input type="hidden" class="poly_name" value="{{ $doctor->polyclinic->name }}">
-                        {{ $doctor->polyclinic->name }}
-                    </td>
-                    <td>
-                        <a class="done" id="{{ $doctor->id-1 }}" name="name">Select</a>
-                    </td>
-                </tr>
-                @endforeach
-            </table>
+                        </table>
 
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Date:</strong>
-                    <input type="text" name="price" class="form-control" placeholder="Price">
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12">
+                            <div class="form-group">
+                                <strong>Date:</strong>
+                                <input type="text" name="price" class="form-control" placeholder="Price">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                    <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </div>
-
     </form>
 </div>
 

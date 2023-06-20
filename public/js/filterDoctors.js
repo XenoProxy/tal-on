@@ -10,6 +10,7 @@ $(document).ready(function() {
         
         $(`#${row}`).on('click', function(){
             if($(this).attr('id') == row){
+                console.log(data_row)
                 $('#js-result_dn').html(' ' + data_row[0]);
                 $('#js-result_df').html(' ' + data_row[1]);
                 $('#js-result_p').html(' ' + data_row[2]);
@@ -22,7 +23,7 @@ $(document).ready(function() {
         filterTable($(this).parents('table'));
     });
 
-    function filterTable($table) {
+    function filterTable($table){
         let $filters = $table.find('.table-filters td');
         let $rows = $table.find('.table-data');
         $rows.each(function(){
