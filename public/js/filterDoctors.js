@@ -25,12 +25,12 @@ $(document).ready(function() {
     function filterTable($table) {
         let $filters = $table.find('.table-filters td');
         let $rows = $table.find('.table-data');
-        $rows.each(function (rowIndex) {
+        $rows.each(function(){
             let valid = true;
-            $(this).find('td').each(function (colIndex) {
-                if ($filters.eq(colIndex).find('select').val()) {
+            $(this).find('td').each(function(col){
+                if ($filters.eq(col).find('select').val()) {
                     if ($(this).html().toLowerCase().indexOf( // если в массиве значение не найдено, то false
-                        $filters.eq(colIndex).find('select').val().toLowerCase()) == -1) {
+                        $filters.eq(col).find('select').val().toLowerCase()) == -1) {
                         valid = valid && false;
                     }
                 }
