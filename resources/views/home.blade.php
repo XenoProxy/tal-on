@@ -20,7 +20,7 @@
 
             </div>
 
-            <a class="btn btn-info" href="{{ route('tickets.create') }}">Order the ticket</a>
+            <a class="btn btn-info" href="{{ route('polyclinics.index') }}">Order the ticket</a>
             
         </div>
     </div>

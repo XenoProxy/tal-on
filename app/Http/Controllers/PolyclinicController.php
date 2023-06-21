@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Doctor;
 use Illuminate\Http\Request;
 use App\Models\Polyclinic;
 use App\Services\Polyclinics\ContactsService as ContactsService;
@@ -24,7 +25,11 @@ class PolyclinicController extends Controller
 
     public function show(Polyclinic $polyclinic)
     {
-        return view('polyclinics.show', compact('polyclinic'));
+        $polyclinic_doctors = Doctor::where('poly_id', $polyclinic->id)
+            ->get()
+            ->toArray();
+        dd($polyclinic_doctors);
+        return view('polyclinics.show', compact('polyclinic', 'polyclinic_doctors'));
     }
     
 }

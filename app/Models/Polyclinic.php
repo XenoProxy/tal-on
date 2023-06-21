@@ -13,7 +13,7 @@ class Polyclinic extends Model
 
     public function doctor()
     {
-        return $this->hasMany(Doctor::class);
+        return $this->hasMany(Doctor::class, 'poly_id', 'id');
     }
 
     public function user()

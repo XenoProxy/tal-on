@@ -27,6 +27,5 @@
                 {{ $polyclinic->address }}
             </div>
         </div>
-
     </div>     
 @endsection

@@ -19,6 +19,7 @@
                             <th>Name</th>
                             <th>Address</th>
                             <th>Contacts</th>
+                            <th>Order ticket</th>
                         </tr>
                         
                         @foreach ($polyclinics as $polyclinic)
@@ -26,6 +27,9 @@
                             <td>{{ $polyclinic->name }}</td>
                             <td>{{ $polyclinic->address }}</td>
                             <td>{{ $contacts[$loop->index] }}</td>
+                            <td>
+                                <a class="btn btn-info" href="{{ route('polyclinics.show', $polyclinic->id) }}">Order</a>
+                            </td>
                         </tr>
                         @endforeach
                     </table>
