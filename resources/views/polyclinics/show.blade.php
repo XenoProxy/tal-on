@@ -37,10 +37,13 @@
 
     <div class="row">
         <section>
-            @foreach ($polyclinic_doctors as $doctor)
-                <p>{{ $doctor->name }} {{ $doctor->field }} {{ $doctor->office }}</p>
-                @foreach ($time as $t)
-                    <button class="btn btn-info">{{ $time[$loop->index] }}</button>
+            @foreach($sorted as $sort)
+                @foreach ($polyclinic_doctors as $doctor)
+                    <p>{{ $sort }}</p>
+                    <p>{{ $doctor->name }} {{ $doctor->field }} {{ $doctor->office }}</p>
+                    @foreach ($time as $t)
+                        <button class="btn btn-info">{{ $time[$loop->index] }}</button>
+                    @endforeach
                 @endforeach
             @endforeach
         </section>
