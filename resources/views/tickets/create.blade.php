@@ -53,7 +53,7 @@
                 <div class="card">
                     <div class="card-header">{{ __('Ticket Ordering') }}</div>
 
-                    <div class="card-header">
+                    <div class="card-body">
                         <table class="table table-bordered" id="filter-table">
                             <tr>
                                 <th rowspan="2" >Name</th>

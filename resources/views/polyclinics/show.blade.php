@@ -34,21 +34,16 @@
             </div>
         </div>
     </div>
-    
+
     <div class="row">
-        <table class="table table-bordered">
-            <tr>
-                <th>Name</th>
-                <th>Field</th>
-                <th>Office</th>
-            </tr>
+        <section>
             @foreach ($polyclinic_doctors as $doctor)
-            <tr>
-                <td>{{ $doctor->name }}</td>
-                <td>{{ $doctor->field }}</td>
-                <td>{{ $doctor->office }}</td>
-            </tr>
+                <p>{{ $doctor->name }} {{ $doctor->field }} {{ $doctor->office }}</p>
+                @foreach ($time as $t)
+                    <button class="btn btn-info">{{ $time[$loop->index] }}</button>
+                @endforeach
             @endforeach
-        </table>
+        </section>
     </div>
+
 @endsection

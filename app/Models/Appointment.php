@@ -5,9 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\Doctor;
+use App\Models\User;
+
 class Appointment extends Model
 {
     use HasFactory;
+    protected $table = "appointments";
 
     protected $fillable = [
         'start_time',
@@ -17,13 +21,13 @@ class Appointment extends Model
         'doctor_id',
     ];
  
-    public function client(): BelongsTo
+    public function user(): BelongsTo
     {
-        return $this->belongsTo(Client::class);
+        return $this->belongsTo(User::class);
     }
  
-    public function employee(): BelongsTo
+    public function doctor(): BelongsTo
     {
-        return $this->belongsTo(Employee::class);
+        return $this->belongsTo(Doctor::class);
     }
 }
