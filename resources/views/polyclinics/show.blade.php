@@ -27,5 +27,28 @@
                 {{ $polyclinic->address }}
             </div>
         </div>
-    </div>     
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Contacts:</strong>
+                {{ $contacts[$polyclinic->id-1] }}
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <table class="table table-bordered">
+            <tr>
+                <th>Name</th>
+                <th>Field</th>
+                <th>Office</th>
+            </tr>
+            @foreach ($polyclinic_doctors as $doctor)
+            <tr>
+                <td>{{ $doctor->name }}</td>
+                <td>{{ $doctor->field }}</td>
+                <td>{{ $doctor->office }}</td>
+            </tr>
+            @endforeach
+        </table>
+    </div>
 @endsection

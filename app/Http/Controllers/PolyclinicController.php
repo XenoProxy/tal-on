@@ -25,11 +25,9 @@ class PolyclinicController extends Controller
 
     public function show(Polyclinic $polyclinic)
     {
-        $polyclinic_doctors = Doctor::where('poly_id', $polyclinic->id)
-            ->get()
-            ->toArray();
-        dd($polyclinic_doctors);
-        return view('polyclinics.show', compact('polyclinic', 'polyclinic_doctors'));
+        $polyclinic_doctors = Doctor::where('poly_id', $polyclinic->id)->get();
+        $contacts = $this->contactsService->phoneNumber();
+        return view('polyclinics.show', compact('polyclinic', 'polyclinic_doctors', 'contacts'));
     }
     
 }
