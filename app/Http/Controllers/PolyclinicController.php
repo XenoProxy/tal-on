@@ -51,17 +51,15 @@ class PolyclinicController extends Controller
         }
 
 
-        
-
-        $collection = collect(['6 May', '2 May', '26 May']);
-        $sorted = $collection->sort(SORT_NATURAL);
+        $date = collect(['6 May', '2 May', '26 May']);
+        $sorted_date = $date->sort(SORT_NATURAL);
 
         $time = ["11:00", "15:00"];
 
         //dd($polyclinic_doctors->toArray());
         $contacts = $this->contactsService->phoneNumber();
         return view('polyclinics.show', compact(
-            'sorted', 
+            'sorted_date', 
             'polyclinic', 
             'polyclinic_doctors', 
             'contacts', 

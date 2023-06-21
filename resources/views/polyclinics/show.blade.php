@@ -37,9 +37,9 @@
 
     <div class="row">
         <section>
-            @foreach($sorted as $sort)
+            @foreach($sorted_date as $date)
                 @foreach ($polyclinic_doctors as $doctor)
-                    <p>{{ $sort }}</p>
+                    <p>{{ $date }}</p>
                     <p>{{ $doctor->name }} {{ $doctor->field }} {{ $doctor->office }}</p>
                     @foreach ($time as $t)
                         <button class="btn btn-info">{{ $time[$loop->index] }}</button>
