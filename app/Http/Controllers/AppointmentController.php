@@ -8,6 +8,11 @@ use App\Models\Appointment;
 
 class AppointmentController extends Controller
 {
+    public function getDoctor(Request $request)
+    {
+        $appointment = $request->all();
+    }
+
     public function index()
     {
         $events = [];

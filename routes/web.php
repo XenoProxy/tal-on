@@ -25,4 +25,4 @@ Route::resource('doctors', App\Http\Controllers\DoctorController::class);
 Route::resource('account', App\Http\Controllers\UserController::class);
 Route::post('tickets', [App\Http\Controllers\TicketController::class, 'create']);
 
-Route::get('appointments', \App\Http\Controllers\AppointmentController::class)->name('order'); 
+Route::post('polyclinics/get-doctor', [\App\Http\Controllers\AppointmentController::class, 'getDoctor']); 

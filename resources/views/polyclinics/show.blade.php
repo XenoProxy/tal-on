@@ -34,19 +34,28 @@
             </div>
         </div>
     </div>
-
+    
     <div class="row">
-        <section>
-            @foreach($sorted_date as $date)
+        
+        @foreach($sorted_date as $date)                
                 @foreach ($polyclinic_doctors as $doctor)
-                    <p>{{ $date }}</p>
-                    <p>{{ $doctor->name }} {{ $doctor->field }} {{ $doctor->office }}</p>
-                    @foreach ($time as $t)
-                        <button class="btn btn-info">{{ $time[$loop->index] }}</button>
-                    @endforeach
-                @endforeach
-            @endforeach
-        </section>
+                    <div class="row justify-content-left" style="justify-content: left">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <input type="hidden" name="doctor_id" id="doctor_id" value="{{ $doctor->id }}">
+                                    <p id="date" value="{{ $date }}">{{ $date }}</p>
+                                    <p>{{ $doctor->name }} {{ $doctor->field }} {{ $doctor->office }}</p>
+                                    @foreach ($time as $t)
+                                        <button class="btn btn-info" id="time" value="{{ $time[$loop->index] }}">{{ $time[$loop->index] }}</button>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach                
+        @endforeach
+       
     </div>
 
 @endsection
