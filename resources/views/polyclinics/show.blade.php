@@ -43,19 +43,27 @@
                     <div class="col-md-4">
                         <div class="card">
                             <div class="card-body">
-                                <data type="hidden" id="date_count" value="{{$loop->parent->count-1}}"></data>
-                                <data type="hidden" id="doctor_count" value="{{$loop->count-1}}"></data>
-                                
-                                <data type="hidden" name="_token" id="token" value="{{ csrf_token() }}"></data>                                
-                                <data type="hidden" name="doctor_id" id="doctor_id" value="{{ $doctor->id }}"></data>
-                                <data id="date" value="{{ $date }}">{{ $date }}</data>
+                                <data type="hidden" name="_token" id="token" value="{{ csrf_token() }}"></data>
+                                <!-- <data type="hidden" id="date_count" value="{{$loop->parent->count-1}}"></data> -->
+                                <!-- <data type="hidden" id="doctor_count" value="{{$loop->count-1}}"></data> -->
 
-                                <p>{{ $doctor->name }} {{ $doctor->field }} {{ $doctor->office }}</p>
+                                <data id="date_count" value="{{$loop->parent->count-1}}">
+                                    <data id="date_id" value="{{ $loop->parent->index }}"></data>
+                                    <data id="date" value="{{ $date }}">{{ $date }}</data>
+                                </data>
+
+                                <data id="doctor_count" value="{{$loop->count-1}}">
+                                    <data id="doctor_id" value="{{ $loop->index }}"></data>
+                                    <data type="hidden" name="doctor" id="doctor" value="{{ $doctor->id }}"></data>
+                                    <p>{{ $doctor->name }} {{ $doctor->field }} {{ $doctor->office }}</p>
+                                </data>                               
 
                                 @foreach ($times as $time)
-                                    <data type="hidden" id="time_count" value="{{$loop->count-1}}"></data>
+                                    <data type="hidden" id="time_count" value="{{$loop->count-1}}">
+                                        <data id="time_id" value="{{ $loop->index }}"></data>
+                                        <data type="hidden" name="time" id="time" value="{{ $time }}"></data>
+                                    </data>
 
-                                    <data type="hidden" name="time" id="time" value="{{ $time }}"></data>
                                     <span class="appointments">
                                         <button class="btn btn-info" id="appointment" 
                                             value="{{$loop->parent->parent->index}} {{ $loop->parent->index }} {{ $loop->index }}">
