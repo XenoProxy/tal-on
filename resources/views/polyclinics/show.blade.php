@@ -36,15 +36,16 @@
     </div>
     
     <div class="row">
-        
+    @csrf
         @foreach($sorted_date as $date)                
                 @foreach ($polyclinic_doctors as $doctor)
                     <div class="row justify-content-left" style="justify-content: left">
                         <div class="col-md-4">
                             <div class="card">
                                 <div class="card-body">
-                                    <input type="hidden" name="doctor_id" id="doctor_id" value="{{ $doctor->id }}">
-                                    <p id="date" value="{{ $date }}">{{ $date }}</p>
+                                    <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+                                    <data type="hidden" name="doctor_id" id="doctor_id" value="{{ $doctor->id }}"></data>
+                                    <data id="date" value="{{ $date }}">{{ $date }}</data>
                                     <p>{{ $doctor->name }} {{ $doctor->field }} {{ $doctor->office }}</p>
                                     @foreach ($time as $t)
                                         <button class="btn btn-info" id="time" value="{{ $time[$loop->index] }}">{{ $time[$loop->index] }}</button>
