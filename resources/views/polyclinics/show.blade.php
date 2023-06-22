@@ -56,10 +56,12 @@
                                     <data type="hidden" id="time_count" value="{{$loop->count-1}}"></data>
 
                                     <data type="hidden" name="time" id="time" value="{{ $time }}"></data>
-                                    <button class="btn btn-info" id="appointment" 
-                                        value="{{$loop->parent->parent->index}} {{ $loop->parent->index }} {{ $loop->index }}">
-                                        {{$loop->parent->parent->index}} {{ $loop->parent->index }} {{ $loop->index }}
-                                    </button>
+                                    <span class="appointments">
+                                        <button class="btn btn-info" id="appointment" 
+                                            value="{{$loop->parent->parent->index}} {{ $loop->parent->index }} {{ $loop->index }}">
+                                            {{$loop->parent->parent->index}} {{ $loop->parent->index }} {{ $loop->index }}
+                                        </button>
+                                    </span>                                        
                                 @endforeach
                             </div>
                         </div>
