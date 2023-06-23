@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('home');
-// });
+Route::get('/', function () {
+    return view('home');
+});
 
 Auth::routes();
 
@@ -26,3 +26,4 @@ Route::resource('account', App\Http\Controllers\UserController::class);
 Route::post('tickets', [App\Http\Controllers\TicketController::class, 'create']);
 
 Route::post('polyclinics/get-doctor', [\App\Http\Controllers\AppointmentController::class, 'getDoctor']); 
+Route::get('/appointments', [\App\Http\Controllers\AppointmentController::class, 'index']); 

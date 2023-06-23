@@ -51,7 +51,7 @@
                                 @foreach ($times as $time)
                                     <input type="hidden" name="time" class="time" value="{{ $time }}">
                                     <span class="appointments">
-                                        <button class="btn btn-info"value="{{ $time }}">{{ $time }}</button>
+                                        <a class="btn btn-info"value="{{ $time }}" href="{{ route('appointments.index') }}">{{ $time }}</a>
                                     </span>                                        
                                 @endforeach
                             </div>

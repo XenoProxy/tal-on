@@ -15,18 +15,18 @@ class AppointmentController extends Controller
 
     public function index()
     {
-        $events = [];
+        // $events = [];
  
-        $appointments = Appointment::with(['user', 'doctor'])->get();
+        // $appointments = Appointment::with(['user', 'doctor'])->get();
  
-        foreach ($appointments as $appointment) {
-            $events[] = [
-                'title' => $appointment->user->name . ' ('.$appointment->doctor->name.')',
-                'start' => $appointment->start_time,
-                'end' => $appointment->finish_time,
-            ];
-        }
+        // foreach ($appointments as $appointment) {
+        //     $events[] = [
+        //         'title' => $appointment->user->name . ' ('.$appointment->doctor->name.')',
+        //         'start' => $appointment->start_time,
+        //         'end' => $appointment->finish_time,
+        //     ];
+        // }
  
-        return view('appointments.index', compact('events'));
+        return view('appointments.index');
     }
 }
