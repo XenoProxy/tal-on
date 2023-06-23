@@ -44,23 +44,14 @@
                     <div class="col-md-4">
                         <div class="card">
                             <div class="card-body">
-                                <input type="hidden" class="date_count" value="{{$loop->parent->count}}">
-                                <data class="date" id="{{ $loop->parent->index }}" value="{{ $date }}">{{ $date }}</data>
-
-                                <input type="hidden" class="doctor_count" value="{{$loop->count}}">
-                                <input type="hidden" class="doctor" id="doctor" value="{{ $doctor->id }}">  
+                                <data class="date" value="{{ $date }}">{{ $date }}</data>
+                                <input type="hidden" class="doctor" value="{{ $doctor->id }}">  
                                 <p>{{ $doctor->name }} {{ $doctor->field }} {{ $doctor->office }}</p>                           
 
                                 @foreach ($times as $time)
-                                    <input type="hidden" class="time_count" value="{{$loop->count}}">
-                                    <input type="hidden" id="time_id" value="{{ $loop->index }}">
-                                    <input type="hidden" name="time" class="time" id="time" value="{{ $time }}">
-
+                                    <input type="hidden" name="time" class="time" value="{{ $time }}">
                                     <span class="appointments">
-                                        <button class="btn btn-info" id="{{$loop->parent->parent->index}}{{ $doctor->id }}{{ $loop->index }}" 
-                                            value="{{ $time }}">
-                                            {{ $time }}
-                                        </button>
+                                        <button class="btn btn-info"value="{{ $time }}">{{ $time }}</button>
                                     </span>                                        
                                 @endforeach
                             </div>
