@@ -37,37 +37,29 @@
     
     <div class="row">
     @csrf
+    <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
         @foreach($sorted_date as $date)              
             @foreach ($polyclinic_doctors as $doctor)
                 <div class="row justify-content-left" style="justify-content: left">
                     <div class="col-md-4">
                         <div class="card">
                             <div class="card-body">
-                                <data type="hidden" name="_token" id="token" value="{{ csrf_token() }}"></data>
-                                <!-- <data type="hidden" id="date_count" value="{{$loop->parent->count-1}}"></data> -->
-                                <!-- <data type="hidden" id="doctor_count" value="{{$loop->count-1}}"></data> -->
+                                <input type="hidden" class="date_count" value="{{$loop->parent->count}}">
+                                <data class="date" id="{{ $loop->parent->index }}" value="{{ $date }}">{{ $date }}</data>
 
-                                <data id="date_count" value="{{$loop->parent->count}}">
-                                    <data id="date_id" value="{{ $loop->parent->index }}"></data>
-                                    <data class="date" id="{{ $loop->parent->index }}" value="{{ $date }}">{{ $date }}</data>
-                                </data>
-
-                                <data id="doctor_count" value="{{$loop->count}}">
-                                    <data id="doctor_id" value="{{ $loop->index }}"></data>
-                                    <data type="hidden" name="doctor" id="doctor" value="{{ $doctor->id }}"></data>
-                                    <p>{{ $doctor->name }} {{ $doctor->field }} {{ $doctor->office }}</p>
-                                </data>                               
+                                <input type="hidden" class="doctor_count" value="{{$loop->count}}">
+                                <input type="hidden" class="doctor" id="doctor" value="{{ $doctor->id }}">  
+                                <p>{{ $doctor->name }} {{ $doctor->field }} {{ $doctor->office }}</p>                           
 
                                 @foreach ($times as $time)
-                                    <data type="hidden" id="time_count" value="{{$loop->count}}">
-                                        <data id="time_id" value="{{ $loop->index }}"></data>
-                                        <data type="hidden" name="time" id="time" value="{{ $time }}"></data>
-                                    </data>
+                                    <input type="hidden" class="time_count" value="{{$loop->count}}">
+                                    <input type="hidden" id="time_id" value="{{ $loop->index }}">
+                                    <input type="hidden" name="time" class="time" id="time" value="{{ $time }}">
 
-                                    <span class="appointments" id>
-                                        <button class="btn btn-info" id="{{$loop->parent->parent->index}}{{ $loop->parent->index }}{{ $loop->index }}" 
+                                    <span class="appointments">
+                                        <button class="btn btn-info" id="{{$loop->parent->parent->index}}{{ $doctor->id }}{{ $loop->index }}" 
                                             value="{{ $time }}">
-                                            {{$loop->parent->parent->index}} {{ $loop->parent->index }} {{ $loop->index }}
+                                            {{ $time }}
                                         </button>
                                     </span>                                        
                                 @endforeach

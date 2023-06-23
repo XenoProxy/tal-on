@@ -36,9 +36,9 @@ class PolyclinicController extends Controller
 
         $times = ["11:00", "15:00"];
 
-        $datetime = "28-1-2011 14:32:55";
-        $date = date('Y-m-d', strtotime($datetime));
-        $time = date('H:i:s', strtotime($datetime));
+        // $datetime = "28-1-2011 14:32:55";
+        // $date = date('Y-m-d', strtotime($datetime));
+        // $time = date('H:i:s', strtotime($datetime));
 
         $contacts = $this->contactsService->phoneNumber();
         return view('polyclinics.show', compact(
