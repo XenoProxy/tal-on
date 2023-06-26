@@ -8,9 +8,12 @@ use App\Models\Appointment;
 
 class AppointmentController extends Controller
 {
+    protected $appointment = null;
+
     public function getDoctor(Request $request)
     {
-        $appointment = $request->all();
+        $this->appointment = $request->all();
+        echo json_encode($this->appointment);
     }
 
     public function index()
@@ -26,6 +29,8 @@ class AppointmentController extends Controller
         //         'end' => $appointment->finish_time,
         //     ];
         // }
+        //dd($this->appointment);
+        echo json_encode($this->appointment);
  
         return view('appointments.index');
     }
