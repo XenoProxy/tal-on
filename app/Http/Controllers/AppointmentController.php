@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Response;
 
 use App\Models\Appointment;
 
@@ -13,7 +14,8 @@ class AppointmentController extends Controller
     public function getDoctor(Request $request)
     {
         $this->appointment = $request->all();
-        echo json_encode($this->appointment);
+        $data = json_encode($this->appointment);
+        return view('appointments.index');
     }
 
     public function index()
@@ -29,9 +31,9 @@ class AppointmentController extends Controller
         //         'end' => $appointment->finish_time,
         //     ];
         // }
-        //dd($this->appointment);
-        echo json_encode($this->appointment);
- 
-        return view('appointments.index');
+        //echo json_encode($this->appointment);
+        
+        $data = json_encode($this->appointment);
+        //return view('appointments.index');
     }
 }

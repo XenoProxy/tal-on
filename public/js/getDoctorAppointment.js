@@ -19,7 +19,7 @@ $(document).ready(function (){
             time: time,
             _token: token
             }).done(function (response){
-                console.log(response);
+                //console.log(response);
         });
     });
 });
