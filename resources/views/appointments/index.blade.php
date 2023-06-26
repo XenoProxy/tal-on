@@ -7,7 +7,7 @@
             <div id="isLiked" style="display:none;"></div>
             <div class="pull-left">
                 <h2>Appointments index</h2>
-                <p></p>
+                <p>{{ $data }}</p>
             </div>
         </div>
     </div>

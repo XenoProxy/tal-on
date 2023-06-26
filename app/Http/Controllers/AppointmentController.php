@@ -15,7 +15,7 @@ class AppointmentController extends Controller
     {
         $this->appointment = $request->all();
         $data = json_encode($this->appointment);
-        return view('appointments.index');
+        
     }
 
     public function index()
@@ -34,6 +34,7 @@ class AppointmentController extends Controller
         //echo json_encode($this->appointment);
         
         $data = json_encode($this->appointment);
-        //return view('appointments.index');
+        //dd($data);
+        return view('appointments.index', compact('data'));
     }
 }
