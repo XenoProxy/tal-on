@@ -7,7 +7,9 @@
             <div id="isLiked" style="display:none;"></div>
             <div class="pull-left">
                 <h2>Appointments index</h2>
-                <p>{{ $data }}</p>
+                @foreach ($appointments as $appointment)
+                    {{ $appointment }}
+                @endforeach
             </div>
         </div>
     </div>

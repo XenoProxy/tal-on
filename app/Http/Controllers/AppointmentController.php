@@ -9,18 +9,18 @@ use App\Models\Appointment;
 
 class AppointmentController extends Controller
 {
-    protected $appointment = null;
-
     public function getDoctor(Request $request)
     {
-        $this->appointment = $request->all();
-        $data = json_encode($this->appointment);
-        
+        $appointmentInfo = $request->all();
+        Appointment::create($appointmentInfo);
+        dd($appointmentInfo);
+        //return redirect()->route('appointments.index')->withInput();        
     }
 
     public function index()
     {
         // $events = [];
+        $appointments = Appointment::all();
  
         // $appointments = Appointment::with(['user', 'doctor'])->get();
  
@@ -31,10 +31,8 @@ class AppointmentController extends Controller
         //         'end' => $appointment->finish_time,
         //     ];
         // }
-        //echo json_encode($this->appointment);
         
-        $data = json_encode($this->appointment);
-        //dd($data);
-        return view('appointments.index', compact('data'));
+        //dd($appointments);
+        return view('appointments.index', compact('appointments'));
     }
 }
