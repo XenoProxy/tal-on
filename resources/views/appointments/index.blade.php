@@ -8,7 +8,7 @@
             <div class="pull-left">
                 <h2>Appointments index</h2>
                 @foreach ($appointments as $appointment)
-                    {{ $appointment }}
+                    <p>{{ $appointment->doctor_id }} {{ $appointment->comments }}</p>
                 @endforeach
             </div>
         </div>

@@ -11,7 +11,7 @@ $(document).ready(function (){
         let time = $(this).text();
         let token = $('#token').val();
 
-        console.log(date, doctor, time)
+        //console.log(date, doctor, time)
 
         $.post('get-doctor', {
             date: date,

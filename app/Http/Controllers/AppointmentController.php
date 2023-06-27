@@ -12,9 +12,11 @@ class AppointmentController extends Controller
     public function getDoctor(Request $request)
     {
         $appointmentInfo = $request->all();
-        Appointment::create($appointmentInfo);
-        dd($appointmentInfo);
-        //return redirect()->route('appointments.index')->withInput();        
+        Appointment::create([
+            "doctor_id" => $appointmentInfo["doctor"],
+            "comments" => $appointmentInfo["date"].' '. $appointmentInfo["time"]
+        ]);
+        //echo $appointmentInfo["doctor"];
     }
 
     public function index()
