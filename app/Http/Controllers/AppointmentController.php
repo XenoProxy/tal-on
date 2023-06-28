@@ -12,29 +12,15 @@ class AppointmentController extends Controller
     public function getDoctor(Request $request)
     {
         $appointmentInfo = $request->all();
-        Appointment::create([
+        $appointment = Appointment::create([
             "doctor_id" => $appointmentInfo["doctor"],
             "comments" => $appointmentInfo["date"].' '. $appointmentInfo["time"]
         ]);
-        //echo $appointmentInfo["doctor"];
+        return $appointment->id;
     }
 
-    public function index()
+    public function show(Appointment $appointment)
     {
-        // $events = [];
-        $appointments = Appointment::all();
- 
-        // $appointments = Appointment::with(['user', 'doctor'])->get();
- 
-        // foreach ($appointments as $appointment) {
-        //     $events[] = [
-        //         'title' => $appointment->user->name . ' ('.$appointment->doctor->name.')',
-        //         'start' => $appointment->start_time,
-        //         'end' => $appointment->finish_time,
-        //     ];
-        // }
-        
-        //dd($appointments);
-        return view('appointments.index', compact('appointments'));
+        return view('appointments.show', compact('appointment'));
     }
 }

@@ -6,10 +6,8 @@
         <div class="col-lg-12 margin-tb">
             <div id="isLiked" style="display:none;"></div>
             <div class="pull-left">
-                <h2>Appointments index</h2>
-                @foreach ($appointments as $appointment)
-                    <p>{{ $appointment->doctor_id }} {{ $appointment->comments }}</p>
-                @endforeach
+                <h2>Appointment show</h2>
+                <p>{{ $appointment->doctor_id }} {{ $appointment->comments }}</p>
             </div>
         </div>
     </div>

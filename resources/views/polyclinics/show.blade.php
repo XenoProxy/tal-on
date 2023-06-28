@@ -49,9 +49,8 @@
                                 <p>{{ $doctor->name }} {{ $doctor->field }} {{ $doctor->office }}</p>                           
 
                                 @foreach ($times as $time)
-                                    <input type="hidden" name="time" class="time" value="{{ $time }}">
                                     <span class="appointments">
-                                        <a class="btn btn-info"value="{{ $time }}" href="{{ route('appointments.index') }}">{{ $time }}</a>
+                                        <button class="btn btn-info" name="time" value="{{ $time }}">{{ $time }}</button>
                                     </span>                                        
                                 @endforeach
                             </div>
