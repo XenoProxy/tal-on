@@ -18,7 +18,7 @@ $(document).ready(function (){
             _token: token
             }).done(function (appointmentId){
                 console.log(appointmentId);
-                let url = `/appointments/${appointmentId}`
+                let url = `/appointments/${appointmentId}/edit`
                 window.location.replace(url);
         });
     });

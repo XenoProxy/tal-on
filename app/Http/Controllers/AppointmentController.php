@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Response;
 
 use App\Models\Appointment;
+use App\Models\Doctor;
 
 class AppointmentController extends Controller
 {
@@ -19,8 +20,20 @@ class AppointmentController extends Controller
         return $appointment->id;
     }
 
-    public function show(Appointment $appointment)
+    public function edit(Appointment $appointment)
     {
-        return view('appointments.show', compact('appointment'));
+        return view('appointments.edit', compact('appointment'));
+    }
+
+    public function update(Request $request, Appointment $appointment)
+    {
+        $request->validate([
+            'user_id' => 'required', 
+        ]);
+
+        $appointment->update($request->all());
+
+        // return redirect()->route('products.index')
+        //     ->with('success', 'Product edited successfully');
     }
 }
