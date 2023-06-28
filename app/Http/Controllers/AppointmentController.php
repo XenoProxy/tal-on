@@ -22,14 +22,15 @@ class AppointmentController extends Controller
 
     public function edit(Appointment $appointment)
     {
-        return view('appointments.edit', compact('appointment'));
+        $appointment_doctor = $appointment->doctor->name;
+        return view('appointments.edit', compact('appointment', 'appointment_doctor'));
     }
 
     public function update(Request $request, Appointment $appointment)
     {
-        $request->validate([
-            'user_id' => 'required', 
-        ]);
+        // $request->validate([
+        //     'user_id' => 'required', 
+        // ]);
 
         $appointment->update($request->all());
 
