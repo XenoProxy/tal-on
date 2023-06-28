@@ -15,7 +15,8 @@ class AppointmentController extends Controller
         $appointmentInfo = $request->all();
         $appointment = Appointment::create([
             "doctor_id" => $appointmentInfo["doctor"],
-            "comments" => $appointmentInfo["date"].' '. $appointmentInfo["time"]
+            "date" => $appointmentInfo["date"],
+            "time" => $appointmentInfo["time"]
         ]);
         return $appointment->id;
     }

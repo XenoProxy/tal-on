@@ -11,11 +11,12 @@ use App\Models\User;
 class Appointment extends Model
 {
     use HasFactory;
+    
     protected $table = "appointments";
 
     protected $fillable = [
-        'start_time',
-        'finish_time',
+        'date',
+        'time',
         'comments',
         'user_id',
         'doctor_id',
