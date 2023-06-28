@@ -23,7 +23,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('polyclinics', App\Http\Controllers\PolyclinicController::class);
 Route::resource('doctors', App\Http\Controllers\DoctorController::class);
 Route::resource('account', App\Http\Controllers\UserController::class);
-Route::post('tickets', [App\Http\Controllers\TicketController::class, 'create']);
-
 Route::post('polyclinics/get-doctor', [\App\Http\Controllers\AppointmentController::class, 'getDoctor']); 
 Route::resource('appointments', \App\Http\Controllers\AppointmentController::class); 
