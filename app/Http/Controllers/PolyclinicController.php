@@ -31,22 +31,32 @@ class PolyclinicController extends Controller
         // врачи текущей поликлиники
         $polyclinic_doctors = Doctor::where('poly_id', $polyclinic->id)->get();
 
-        $date = collect(['6 May', '2 May', '26 May']);
-        $sorted_date = $date->sort(SORT_NATURAL);
+        $date_arr = [];
+        //$current_date = date("d F Y");
+        for($i = 0; $i <= 14; $i++){
+            $date_arr[] = date("l - d F Y", time() + 86400*$i);
+        }
+        //dd($date_arr);
 
-        $times = ["11:00", "15:00"];
+        //dd(strtotime('08:00'));
+        //dd(date('H:i', 1687939200+900)); // 08:15
 
-        // $datetime = "28-1-2011 14:32:55";
-        // $date = date('Y-m-d', strtotime($datetime));
-        // $time = date('H:i:s', strtotime($datetime));
+        $time_arr = [];
+        //$current_time = date("H:i");
+        for($i = 0; $i <= 20; $i++){
+            $time_arr[] = date("H:i", 1687939200 + 900*$i);
+        }
+        //dd($time_arr);
+
+        //$times = ["11:00", "15:00"];
 
         $contacts = $this->contactsService->phoneNumber();
         return view('polyclinics.show', compact(
-            'sorted_date', 
+            'date_arr', 
             'polyclinic', 
             'polyclinic_doctors', 
             'contacts', 
-            'times'
+            'time_arr'
         ));
     }
     
