@@ -44,7 +44,7 @@
                     <div class="col-md-8">
                         <div class="card">
                             <div class="card-body">
-                                <data class="date" value="{{ $date }}">{{ $date }}</data>
+                                <data class="date" value="{{ $date }}">{{ date("l - d F Y", strtotime($date)) }}</data>
                                 <input type="hidden" class="doctor" value="{{ $doctor->id }}">  
                                 <p>{{ $doctor->name }} {{ $doctor->field }} {{ $doctor->office }}</p>                           
 

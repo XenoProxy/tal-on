@@ -15,9 +15,16 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Date time:</strong> {{ $appointment->comments }}
+                <strong>Date:</strong> 
+                {{ date("l - d F Y", strtotime($appointment->date)) }}
             </div>
-        </div>               
+        </div> 
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Time:</strong> 
+                {{ date("h:i", strtotime($appointment->time)) }}
+            </div>
+        </div>              
     </div> 
     
     <form action="{{ route('appointments.update', $appointment->id) }}" method="post">

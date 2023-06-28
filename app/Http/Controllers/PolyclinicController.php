@@ -34,11 +34,12 @@ class PolyclinicController extends Controller
         $date_arr = [];
         //$current_date = date("d F Y");
         for($i = 0; $i <= 14; $i++){
-            $date_arr[] = date("l - d F Y", time() + 86400*$i);
+            $date_arr[] = date("Y-m-d", time() + 86400*$i);
         }
-        //dd($date_arr);
+        // strtotime($date))
+        //dd(date("l - d F Y", strtotime($date_arr[0])));
 
-        //dd(strtotime('08:00'));
+        //dd(strtotime('08:00')); // 1687939200
         //dd(date('H:i', 1687939200+900)); // 08:15
 
         $time_arr = [];
@@ -46,9 +47,6 @@ class PolyclinicController extends Controller
         for($i = 0; $i <= 20; $i++){
             $time_arr[] = date("H:i", 1687939200 + 900*$i);
         }
-        //dd($time_arr);
-
-        //$times = ["11:00", "15:00"];
 
         $contacts = $this->contactsService->phoneNumber();
         return view('polyclinics.show', compact(
