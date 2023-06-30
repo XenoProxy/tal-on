@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Response;
 
 use App\Models\Appointment;
-use App\Models\Doctor;
+use App\Models\User;
 
 class AppointmentController extends Controller
 {
@@ -29,9 +29,10 @@ class AppointmentController extends Controller
 
     public function update(Request $request, Appointment $appointment)
     {
-        // $request->validate([
-        //     'user_id' => 'required', 
-        // ]);
+
+        $request->validate([
+            'user_name' => 'required', 
+        ]);
 
         $appointment->update($request->all());
 

@@ -39,8 +39,8 @@
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Contacts:</strong>
-                    <input type="text" name="user_contacts" class="form-control" placeholder="Contacts">
+                    <strong>Email:</strong>
+                    <input type="text" name="user_contacts" class="form-control" placeholder="Email">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">

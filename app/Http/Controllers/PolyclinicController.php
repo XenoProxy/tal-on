@@ -36,8 +36,6 @@ class PolyclinicController extends Controller
         for($i = 0; $i <= 14; $i++){
             $date_arr[] = date("Y-m-d", time() + 86400*$i);
         }
-        // strtotime($date))
-        //dd(date("l - d F Y", strtotime($date_arr[0])));
 
         //dd(strtotime('08:00')); // 1687939200
         //dd(date('H:i', 1687939200+900)); // 08:15
