@@ -33,10 +33,20 @@ class AppointmentController extends Controller
         $request->validate([
             'user_name' => 'required', 
         ]);
+        $user_name = $request->get('user_name');
+        $user = User::where('name', $user_name)->get();
+        $user_id = NULL;
 
-        $appointment->update($request->all());
+        if($user instanceof User){
+            $user_id = $user->id;
+        }
 
-        // return redirect()->route('products.index')
-        //     ->with('success', 'Product edited successfully');
+        $appointment->update([
+            'user_id' => $user_id,
+            'comments' => $request->get('comments')
+        ]);
+
+        return redirect()->route('home')
+            ->with('success', 'Appointment ordered successfully');
     }
 }
