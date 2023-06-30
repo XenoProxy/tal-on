@@ -41,6 +41,7 @@
                             <th>Doctor</th>
                             <th>Office</th>
                             <th>Date</th>
+                            <th>Time</th>
                         </tr>
                         @foreach ($appointments as $appointment)
                         <tr>
@@ -48,7 +49,8 @@
                             <td>{{ $appointment->doctor->poly_id }}</td>
                             <td>{{ $appointment->doctor->name }}</td>
                             <td>{{ $appointment->doctor->office }}</td>
-                            <td>{{ $appointment->date }} {{ $appointment->time }}</td>
+                            <td>{{ date("l - d F Y", strtotime($appointment->date)) }}</td>
+                            <td> {{ date("H:i", strtotime($appointment->time)) }}</td>
                         </tr>
                         @endforeach
                     </table>

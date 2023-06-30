@@ -22,7 +22,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Time:</strong> 
-                {{ date("h:i", strtotime($appointment->time)) }}
+                {{ date("H:i", strtotime($appointment->time)) }}
             </div>
         </div>              
     </div> 
