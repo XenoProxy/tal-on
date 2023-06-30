@@ -15,11 +15,6 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    public function polyclinic()
-    {
-        return $this->belongsTo(Polyclinic::class, 'poly_id', 'id');
-    }
-
     public function appointment()
     {
         return $this->hasMany(Appointment::class, 'user_id', 'id');

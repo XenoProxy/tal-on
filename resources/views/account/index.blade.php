@@ -26,12 +26,6 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Polyclinic:</strong>
-                {{ $polyclinic_name }}
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
                 <a class="btn btn-info" href="{{ route('polyclinics.index') }}">Order the ticket</a>
             </div>
         </div>

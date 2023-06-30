@@ -13,8 +13,8 @@ class UserController extends Controller
     {
         $user = User::find(Auth::id());
         $appointments = Appointment::where('user_id', $user->id)->get();
-        $polyclinic_name = $user->polyclinic->name;
-        return view('account.index', compact('user', 'polyclinic_name', 'appointments'));
+        //$polyclinic_name = $user->polyclinic->name;     
+        return view('account.index', compact('user', 'appointments'));
     } 
 
 }
