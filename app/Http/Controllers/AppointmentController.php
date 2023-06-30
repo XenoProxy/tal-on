@@ -31,16 +31,19 @@ class AppointmentController extends Controller
     {
 
         $request->validate([
-            'user_name' => 'required', 
+            'user_name' => 'required',
+            'email' => 'email:rfc',
+            'comments' => 'min:0|max:100'            
         ]);
         $user_name = $request->get('user_name');
-        $user = User::where('name', $user_name)->get();
-        $user_id = NULL;
-
+        $user = User::where('name', $user_name)->first();
+        
         if($user instanceof User){
             $user_id = $user->id;
+        } else{
+            $user_id = NULL;
         }
-
+        //dd($user->name);
         $appointment->update([
             'user_id' => $user_id,
             'comments' => $request->get('comments')
