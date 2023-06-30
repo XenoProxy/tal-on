@@ -15,10 +15,4 @@ class Doctor extends Model
     {
         return $this->belongsTo(Polyclinic::class, 'poly_id', 'id');
     }
-
-    public function ticket()
-    {
-        return $this->hasMany(Ticket::class);
-    }
-
 }

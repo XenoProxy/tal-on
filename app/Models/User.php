@@ -20,11 +20,6 @@ class User extends Authenticatable
         return $this->belongsTo(Polyclinic::class, 'poly_id', 'id');
     }
 
-    public function ticket()
-    {
-        return $this->hasMany(Ticket::class, 'user_id', 'id');
-    }
-
     /**
      * The attributes that are mass assignable.
      *
