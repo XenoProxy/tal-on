@@ -37,6 +37,7 @@
                     <table class="table table-bordered">
                         <tr>
                             <th>Appointment №</th>
+                            <th>Polyclinic</th>
                             <th>Doctor</th>
                             <th>Office</th>
                             <th>Date</th>
@@ -44,8 +45,9 @@
                         @foreach ($appointments as $appointment)
                         <tr>
                             <td>{{ $appointment->id }}</td>
-                            <td>{{ $appointment->doctor_id }}</td>
-                            <td>Office</td>
+                            <td>{{ $appointment->doctor->poly_id }}</td>
+                            <td>{{ $appointment->doctor->name }}</td>
+                            <td>{{ $appointment->doctor->office }}</td>
                             <td>{{ $appointment->date }} {{ $appointment->time }}</td>
                         </tr>
                         @endforeach
