@@ -37,21 +37,24 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-8">
             <div class="card">
-                <div class="card-header"><strong>{{ __('Appointments') }}</strong></div>
+                <div class="card-header"><strong>{{ __('My appointments') }}</strong></div>
                 
-                <div class="card-body">                                
+                <div class="card-body">    
                     <table class="table table-bordered">
                         <tr>
+                            <th>Appointment №</th>
                             <th>Doctor</th>
+                            <th>Office</th>
                             <th>Date</th>
-                            <th>Polyclinic</th>
                         </tr>
-                        
+                        @foreach ($appointments as $appointment)
                         <tr>
-                            <td>Doctor</td>
-                            <td>Date</td>
-                            <td>Polyclinic</td>
+                            <td>{{ $appointment->id }}</td>
+                            <td>{{ $appointment->doctor_id }}</td>
+                            <td>Office</td>
+                            <td>{{ $appointment->date }} {{ $appointment->time }}</td>
                         </tr>
+                        @endforeach
                     </table>
                 </div>
             </div>

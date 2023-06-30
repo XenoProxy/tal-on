@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 use App\Models\Polyclinic;
-use App\Models\Ticket;
+use App\Models\Appointment;
 
 class User extends Authenticatable
 {
@@ -18,6 +18,11 @@ class User extends Authenticatable
     public function polyclinic()
     {
         return $this->belongsTo(Polyclinic::class, 'poly_id', 'id');
+    }
+
+    public function appointment()
+    {
+        return $this->hasMany(Appointment::class, 'user_id', 'id');
     }
 
     /**
