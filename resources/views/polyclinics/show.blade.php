@@ -37,6 +37,7 @@
     
     <div class="row">
     @csrf
+    <input type="hidn" class="appointments" value="{{ $appointments }}">
     <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
         @foreach($date_arr as $date)              
             @foreach ($polyclinic_doctors as $doctor)
@@ -46,11 +47,11 @@
                             <div class="card-body">
                                 <data class="date" value="{{ $date }}">{{ date("l - d F Y", strtotime($date)) }}</data>
                                 <input type="hidden" class="doctor" value="{{ $doctor->id }}">  
-                                <p>{{ $doctor->name }} {{ $doctor->field }} {{ $doctor->office }}</p>                           
-
+                                <p>{{ $doctor->name }} {{ $doctor->field }} {{ $doctor->office }}</p>                         
+                                
                                 @foreach ($time_arr as $time)
-                                    <span class="appointments">
-                                        <button class="btn btn-info" style="margin: 2px;" name="time" value="{{ $time }}">{{ $time }}</button>
+                                    <span class="time">                                        
+                                        <button class="btn btn-info" style="margin: 2px;" name="time" value="{{ $time }}">{{ date("H:i", strtotime($time)) }}</button>
                                     </span>                                        
                                 @endforeach
                             </div>
