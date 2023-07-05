@@ -31,34 +31,27 @@ class PolyclinicController extends Controller
         // врачи текущей поликлиники
         $polyclinic_doctors = Doctor::where('poly_id', $polyclinic->id)->get();
 
-        $appointments_arr = Appointment::all()->toArray();
-        //dd($appointments);
-        $appointments = json_encode($appointments_arr);
+        $available_appointments = [];
+        
+        $date_arr = []; 
 
-        $date_arr = [];
-        for($i = 0; $i <= 14; $i++){
-            $date_arr[] = date("Y-m-d", time() + 86400*$i);
-        }        
-
-        $time_arr = [];
-        for($i = 0; $i <= 20; $i++){
-            $time_arr[] = date("H:i:s", 1687939200 + 900*$i);
-        }
-
-
-        $date_time_arr = [];
-        for($y = 0; $y <= 14; $y++){  
+        for($y = 0; $y <= 14; $y++){ 
+            $date_arr[] = date("Y-m-d", time() + 86400*$y); 
             for($i = 0; $i <= 20; $i++){
-                $date_time_arr[date("Y-m-d", time() + 86400*$y)][] = date("H:i:s", 1687939200 + 900*$i);
+                //$date_time_arr[date("Y-m-d", time() + 86400*$y)][] = date("H:i:s", 1687939200 + 900*$i);
+                $available_appointments[] = Appointment::create([
+                    "date" => date("Y-m-d", time() + 86400*$y),
+                    "time" => date("H:i:s", 1687939200 + 900*$i)
+                ]);
             }
         }        
 
-        //dd($date_time_arr);
+        //dd($available_appointments[0]);
 
         $contacts = $this->contactsService->phoneNumber();
         return view('polyclinics.show', compact(
-            'appointments',
-            'date_time_arr', 
+            'available_appointments',
+            'date_arr', 
             'polyclinic', 
             'polyclinic_doctors', 
             'contacts', 

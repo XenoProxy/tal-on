@@ -36,7 +36,6 @@ $(document).ready(function (){
         let time = $(this).val();
         let token = $('#token').val();
 
-        let appointments = JSON.parse($('.appointments').val());
         console.log()
 
         $.post('get-doctor', {

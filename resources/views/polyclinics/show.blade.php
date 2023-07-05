@@ -37,9 +37,8 @@
     
     <div class="row">
     @csrf
-    <input type="hidn" class="appointments" value="{{ $appointments }}">
     <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
-        @foreach($date_time_arr as $date => $values)              
+        @foreach ($date_arr as $date)            
             @foreach ($polyclinic_doctors as $doctor)
                 <div class="row justify-content-left" style="justify-content: left; margin: 4px;">
                     <div class="col-md-8">
@@ -49,11 +48,15 @@
                                 <input type="hidden" class="doctor" value="{{ $doctor->id }}">  
                                 <p>{{ $doctor->name }} {{ $doctor->field }} {{ $doctor->office }}</p>                         
                                 
-                                @foreach ($values as $time)
-                                    <span class="time">                                        
-                                        <button class="btn btn-info" style="margin: 2px;" name="time" value="{{ $time }}">{{ date("H:i", strtotime($time)) }}</button>
-                                    </span>                                        
-                                @endforeach
+                                @foreach($available_appointments as $appointment) 
+                                    @if ($appointment->date === $date)
+                                        <span class="time">                                        
+                                            <button class="btn btn-info" style="margin: 2px;" name="time" value="{{ $appointment->time }}">
+                                                {{ date("H:i", strtotime($appointment->time)) }}
+                                            </button>
+                                        </span>
+                                    @endif 
+                                @endforeach                                        
                             </div>
                         </div>
                     </div>
