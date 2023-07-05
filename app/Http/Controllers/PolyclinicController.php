@@ -45,14 +45,23 @@ class PolyclinicController extends Controller
             $time_arr[] = date("H:i:s", 1687939200 + 900*$i);
         }
 
+
+        $date_time_arr = [];
+        for($y = 0; $y <= 14; $y++){  
+            for($i = 0; $i <= 20; $i++){
+                $date_time_arr[date("Y-m-d", time() + 86400*$y)][] = date("H:i:s", 1687939200 + 900*$i);
+            }
+        }        
+
+        //dd($date_time_arr);
+
         $contacts = $this->contactsService->phoneNumber();
         return view('polyclinics.show', compact(
             'appointments',
-            'date_arr', 
+            'date_time_arr', 
             'polyclinic', 
             'polyclinic_doctors', 
             'contacts', 
-            'time_arr'
         ));
     }
     
