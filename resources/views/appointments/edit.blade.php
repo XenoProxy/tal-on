@@ -3,16 +3,26 @@
 @section('content')
 
     <h2>Appointment show</h2>
-    {{ date("d F Y") }}
     <div class="row">
         <div class="pull-right">
             <a class="btn btn-primary" href="{{ url()->previous() }}"> Back</a>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-            <strong>Doctor:</strong> {{ $appointment_doctor }}
+            <strong>Doctor:</strong> {{ $doctor }}
             </div>
         </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+            <strong>Field:</strong> {{ $field }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+            <strong>Office:</strong> {{ $office }}
+            </div>
+        </div>
+        
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Date:</strong> 

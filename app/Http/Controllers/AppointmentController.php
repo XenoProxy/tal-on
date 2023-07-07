@@ -23,8 +23,10 @@ class AppointmentController extends Controller
 
     public function edit(Appointment $appointment)
     {
-        $appointment_doctor = $appointment->doctor->name;
-        return view('appointments.edit', compact('appointment', 'appointment_doctor'));
+        $doctor = $appointment->doctor->name;
+        $field = $appointment->doctor->field;
+        $office = $appointment->doctor->office;
+        return view('appointments.edit', compact('appointment', 'doctor', 'field', 'office'));
     }
 
     public function update(Request $request, Appointment $appointment)
