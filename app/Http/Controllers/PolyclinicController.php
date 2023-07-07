@@ -31,27 +31,43 @@ class PolyclinicController extends Controller
         // врачи текущей поликлиники
         $polyclinic_doctors = Doctor::where('poly_id', $polyclinic->id)->get();
 
-        $available_appointments = [];
-        
-        $date_arr = []; 
+        $appointments = Appointment::all();
 
+        //dd(count($doctors_array));
+        
+        $date_time_arr = [];
         for($y = 0; $y <= 14; $y++){ 
-            $date_arr[] = date("Y-m-d", time() + 86400*$y); 
-            for($i = 0; $i <= 20; $i++){
-                //$date_time_arr[date("Y-m-d", time() + 86400*$y)][] = date("H:i:s", 1687939200 + 900*$i);
-                $available_appointments[] = Appointment::create([
-                    "date" => date("Y-m-d", time() + 86400*$y),
-                    "time" => date("H:i:s", 1687939200 + 900*$i)
-                ]);
+            foreach($polyclinic_doctors as $doctor){
+                for($i = 0; $i <= 20; $i++){
+                    $date_time_arr[date("Y-m-d", time() + 86400*$y)][$doctor->id][] = date("H:i:s", 1687939200 + 900*$i);
+                }
             }
         }        
 
-        //dd($available_appointments[0]);
+        foreach($appointments as $appointment){
+            $date = $appointment->date;
+            $doctor = $appointment->doctor_id;
+            $time = $appointment->time;
+
+            if(in_array($date, array_keys($date_time_arr))){
+                if(in_array($doctor, array_keys($date_time_arr[$date]))){
+                    if(in_array($time, $date_time_arr[$date][$doctor])){
+
+                        //dd(array_search($time, $date_time_arr[$date][$doctor]));
+                        $time_id = array_search($time, $date_time_arr[$date][$doctor]);
+                        unset($date_time_arr[$date][$doctor][$time_id]); 
+                    }
+                }                
+            }
+            
+        }
+
+        //dd($date_time_arr);
 
         $contacts = $this->contactsService->phoneNumber();
         return view('polyclinics.show', compact(
-            'available_appointments',
-            'date_arr', 
+            'appointments',
+            'date_time_arr', 
             'polyclinic', 
             'polyclinic_doctors', 
             'contacts', 

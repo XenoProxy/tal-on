@@ -38,25 +38,25 @@
     <div class="row">
     @csrf
     <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
-        @foreach ($date_arr as $date)            
-            @foreach ($polyclinic_doctors as $doctor)
+        @foreach($date_time_arr as $date => $doctors)              
+            @foreach ($doctors as $doctor => $times)
                 <div class="row justify-content-left" style="justify-content: left; margin: 4px;">
                     <div class="col-md-8">
                         <div class="card">
                             <div class="card-body">
                                 <data class="date" value="{{ $date }}">{{ date("l - d F Y", strtotime($date)) }}</data>
-                                <input type="hidden" class="doctor" value="{{ $doctor->id }}">  
-                                <p>{{ $doctor->name }} {{ $doctor->field }} {{ $doctor->office }}</p>                         
+                                <input type="hidden" class="doctor" value="{{ $doctor }}">  
                                 
-                                @foreach($available_appointments as $appointment) 
-                                    @if ($appointment->date === $date)
-                                        <span class="time">                                        
-                                            <button class="btn btn-info" style="margin: 2px;" name="time" value="{{ $appointment->time }}">
-                                                {{ date("H:i", strtotime($appointment->time)) }}
-                                            </button>
-                                        </span>
-                                    @endif 
-                                @endforeach                                        
+                                <p>{{ $polyclinic_doctors[$loop->index]->name }}
+                                   {{ $polyclinic_doctors[$loop->index]->field }}
+                                   {{ $polyclinic_doctors[$loop->index]->office }}
+                                </p>                         
+                                
+                                @foreach ($times as $time)
+                                    <span class="time">                                        
+                                        <button class="btn btn-info" style="margin: 2px;" name="time" value="{{ $time }}">{{ date("H:i", strtotime($time)) }}</button>
+                                    </span>                                        
+                                @endforeach
                             </div>
                         </div>
                     </div>
