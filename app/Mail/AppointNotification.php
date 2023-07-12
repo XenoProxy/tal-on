@@ -9,16 +9,20 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
+use App\Models\Appointment;
+
 class AppointNotification extends Mailable
 {
     use Queueable, SerializesModels;
 
+    protected $appointment;
+
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct(Appointment $appointment)
     {
-        //
+        $this->appointment = $appointment;
     }
 
     /**
@@ -38,6 +42,14 @@ class AppointNotification extends Mailable
     {
         return new Content(
             markdown: 'emails.appoint_notification',
+            with: [
+                'number' => $this->appointment->id,
+                'user' => $this->appointment->user->name,
+                'doctor' => $this->appointment->doctor->name,
+                'office' => $this->appointment->doctor->office,
+                'date' => $this->appointment->date,
+                'time' => $this->appointment->time,
+            ],
         );
     }
 

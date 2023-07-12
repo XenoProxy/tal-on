@@ -53,7 +53,7 @@ class AppointmentController extends Controller
             'comments' => $request->get('comments')
         ]);
 
-        Mail::to('ksenomorph6@gmail.com')->send(new AppointNotification());
+        Mail::to('ksenomorph6@gmail.com')->send(new AppointNotification($appointment));
 
         return redirect()->route('home')
             ->with('success', 'Appointment ordered successfully');
