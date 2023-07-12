@@ -25,3 +25,4 @@ Route::resource('doctors', App\Http\Controllers\DoctorController::class);
 Route::resource('account', App\Http\Controllers\UserController::class);
 Route::post('polyclinics/get-doctor', [\App\Http\Controllers\AppointmentController::class, 'getDoctor']); 
 Route::resource('appointments', \App\Http\Controllers\AppointmentController::class); 
+Route::get('/success', [App\Http\Controllers\AppointmentController::class, 'success'])->name('success');

@@ -52,10 +52,16 @@ class AppointmentController extends Controller
             'user_id' => $user_id,
             'comments' => $request->get('comments')
         ]);
+        //dd($request->user_contacts);
 
-        Mail::to('ksenomorph6@gmail.com')->send(new NotificationOfAppointment($appointment));
+        Mail::to($request->user_contacts)->send(new NotificationOfAppointment($appointment));
 
-        return redirect()->route('home')
+        return redirect()->route('success')
             ->with('success', 'Appointment ordered successfully');
+    }
+
+    public function success( Appointment $appointment)
+    {
+        return view('appointments.success', compact('appointment'));
     }
 }
