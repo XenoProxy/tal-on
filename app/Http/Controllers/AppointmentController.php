@@ -10,15 +10,18 @@ use App\Models\User;
 use App\Mail\NotificationOfAppointment;
 use Illuminate\Support\Facades\Mail;
 
+use App\Services\Appointments\LimitationService as LimitationService;
 use App\Services\Polyclinics\ContactsService as ContactsService;
 
 class AppointmentController extends Controller
 {
     protected $contactsService = null;
+    protected $limitationService = null;
 
-    public function __construct(ContactsService $contactsService)
+    public function __construct(ContactsService $contactsService, LimitationService $limitationService)
     {
         $this->contactsService = $contactsService;
+        $this->limitationService = $limitationService;
     }
 
     public function getDoctor(Request $request)
@@ -34,10 +37,11 @@ class AppointmentController extends Controller
 
     public function edit(Appointment $appointment)
     {
-        $doctor = $appointment->doctor->name;
-        $field = $appointment->doctor->field;
-        $office = $appointment->doctor->office;
-        return view('appointments.edit', compact('appointment', 'doctor', 'field', 'office'));
+        $doctor = $appointment->doctor;
+
+        //dd($this->limitationService->appointmentLimit($doctor->id));
+
+        return view('appointments.edit', compact('appointment', 'doctor'));
     }
 
     public function update(Request $request, Appointment $appointment)
@@ -56,12 +60,11 @@ class AppointmentController extends Controller
         } else{
             $user_id = NULL;
         }
-        //dd($user->name);
+
         $appointment->update([
             'user_id' => $user_id,
             'comments' => $request->get('comments')
         ]);
-        //dd($request->user_contacts);
 
         Mail::to($request->user_contacts)->send(new NotificationOfAppointment($appointment));
 
@@ -74,7 +77,6 @@ class AppointmentController extends Controller
         $doctor = $appointment->doctor;
         $polyclinic_id = $doctor->polyclinic->id;
         $contacts = $this->contactsService->phoneNumber()[$polyclinic_id - 1];
-        //dd($contacts);
         return view('appointments.success', compact('appointment', 'doctor', 'contacts'));
     }
 }

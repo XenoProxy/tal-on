@@ -9,17 +9,17 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-            <strong>Doctor:</strong> {{ $doctor }}
+            <strong>Doctor:</strong> {{ $doctor->name }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-            <strong>Field:</strong> {{ $field }}
+            <strong>Field:</strong> {{ $doctor->field }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-            <strong>Office:</strong> {{ $office }}
+            <strong>Office:</strong> {{ $doctor->office }}
             </div>
         </div>
         
