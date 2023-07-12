@@ -10,8 +10,17 @@ use App\Models\User;
 use App\Mail\NotificationOfAppointment;
 use Illuminate\Support\Facades\Mail;
 
+use App\Services\Polyclinics\ContactsService as ContactsService;
+
 class AppointmentController extends Controller
 {
+    protected $contactsService = null;
+
+    public function __construct(ContactsService $contactsService)
+    {
+        $this->contactsService = $contactsService;
+    }
+
     public function getDoctor(Request $request)
     {
         $appointmentInfo = $request->all();
@@ -56,12 +65,16 @@ class AppointmentController extends Controller
 
         Mail::to($request->user_contacts)->send(new NotificationOfAppointment($appointment));
 
-        return redirect()->route('success')
-            ->with('success', 'Appointment ordered successfully');
+        return redirect()->route('success', [$appointment]);
     }
 
-    public function success( Appointment $appointment)
+    public function success($id)
     {
-        return view('appointments.success', compact('appointment'));
+        $appointment = Appointment::find($id);
+        $doctor = $appointment->doctor;
+        $polyclinic_id = $doctor->polyclinic->id;
+        $contacts = $this->contactsService->phoneNumber()[$polyclinic_id - 1];
+        //dd($contacts);
+        return view('appointments.success', compact('appointment', 'doctor', 'contacts'));
     }
 }

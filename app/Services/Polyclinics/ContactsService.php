@@ -6,7 +6,8 @@ use DB;
 
 class ContactsService
 {
-    public function phoneNumber() {
+    public function phoneNumber() : Array
+    {
         $number=[];
 
         $datas = DB::table('polyclinics')

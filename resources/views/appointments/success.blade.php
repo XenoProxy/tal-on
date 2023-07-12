@@ -8,13 +8,14 @@
                 <div class="card-header">{{ __('You have successfully made an appointment!') }}</div>
 
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+                    <p>Your appointment's number <b>{{ $appointment->id }}</b></p>
 
-                    {{ __('You are logged in!') }}
+                    <p>For <b>{{ $appointment->date }}</b> at <b>{{ $appointment->time }}</b>
+                    to the {{ $doctor->name }} in the {{ $doctor->office }} office.</p>
+
+                    <p>If you want to cancel or reschedule the appointment, call the phone number {{ $contacts }}</p>
+
+                    <p>We'll expect you at that time.</p>
                     
                     <a class="btn btn-info" href="{{ route('home') }}">Home</a>
                 </div>
