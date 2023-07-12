@@ -11,7 +11,7 @@ use Illuminate\Queue\SerializesModels;
 
 use App\Models\Appointment;
 
-class AppointNotification extends Mailable
+class NotificationOfAppointment extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -31,7 +31,7 @@ class AppointNotification extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Appoint Notification',
+            subject: 'Notification of Appointment',
         );
     }
 
@@ -41,7 +41,7 @@ class AppointNotification extends Mailable
     public function content(): Content
     {
         return new Content(
-            markdown: 'emails.appoint_notification',
+            markdown: 'emails.notification_of_appointment',
             with: [
                 'number' => $this->appointment->id,
                 'user' => $this->appointment->user->name,

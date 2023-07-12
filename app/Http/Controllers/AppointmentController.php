@@ -7,7 +7,7 @@ use Response;
 
 use App\Models\Appointment;
 use App\Models\User;
-use App\Mail\AppointNotification;
+use App\Mail\NotificationOfAppointment;
 use Illuminate\Support\Facades\Mail;
 
 class AppointmentController extends Controller
@@ -53,7 +53,7 @@ class AppointmentController extends Controller
             'comments' => $request->get('comments')
         ]);
 
-        Mail::to('ksenomorph6@gmail.com')->send(new AppointNotification($appointment));
+        Mail::to('ksenomorph6@gmail.com')->send(new NotificationOfAppointment($appointment));
 
         return redirect()->route('home')
             ->with('success', 'Appointment ordered successfully');
