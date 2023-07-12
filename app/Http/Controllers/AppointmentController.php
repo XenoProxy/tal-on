@@ -39,7 +39,7 @@ class AppointmentController extends Controller
     {
         $doctor = $appointment->doctor;
 
-        //dd($this->limitationService->appointmentLimit($doctor->id));
+        dd($this->limitationService->appointmentLimit($doctor->id, $appointment->date));
 
         return view('appointments.edit', compact('appointment', 'doctor'));
     }

@@ -66,7 +66,6 @@ class PolyclinicController extends Controller
 
         $contacts = $this->contactsService->phoneNumber();
         return view('polyclinics.show', compact(
-            'appointments',
             'date_time_arr', 
             'polyclinic', 
             'polyclinic_doctors', 

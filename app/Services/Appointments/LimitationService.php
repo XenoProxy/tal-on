@@ -7,13 +7,14 @@ use Illuminate\Support\Facades\Auth;
 
 class LimitationService
 {
-    public function appointmentLimit($doctor_id) : bool
+    public function appointmentLimit($doctor_id, $date) : bool
     {
         $isOrdered = false;
 
         $datas = DB::table('appointments')
             ->where('user_id', Auth::id())
             ->where('doctor_id', $doctor_id)
+            ->where('date', $date)
             ->pluck('id')
             ->toArray();
         if(count($datas) >= 1){
