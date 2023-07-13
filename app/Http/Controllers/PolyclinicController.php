@@ -32,6 +32,40 @@ class PolyclinicController extends Controller
         return view('polyclinics.index', compact('polyclinics', 'contacts', 'isAdmin'));
     }    
 
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(Polyclinic $polyclinic)
+    {
+        return view('polyclinics.edit', compact('polyclinic'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, Polyclinic $polyclinic)
+    {
+        $request->validate([
+            'name' => 'required',
+            'address' => 'required',
+            'contacts' => 'required' 
+        ]);
+
+        $polyclinic->update($request->all());
+
+        return redirect()->route('polyclinic.index')
+            ->with('success', 'Polyclinic edited successfully');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Polyclinic $polyclinic)
+    {
+        $polyclinic->delete();
+        return redirect()->route('polyclinics.index')->with('success', 'Polyclinic deleted successfully');
+    }
+
     public function show(Polyclinic $polyclinic)
     {
         // врачи текущей поликлиники
@@ -61,8 +95,6 @@ class PolyclinicController extends Controller
                 }                
             }    
         }
-
-        
 
         $contacts = $this->contactsService->phoneNumber();
         return view('polyclinics.show', compact(

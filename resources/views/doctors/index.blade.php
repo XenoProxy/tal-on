@@ -31,7 +31,7 @@
                                 <a href="{{ route('polyclinics.show', $doctor->poly_id) }}">{{ $doctor->polyclinic->name }}</a>
                             </td>
                             <td>
-                            <form action="#" method="POST">
+                            <form action="{{ route('doctors.destroy', $doctor->id) }}" method="POST">
                                 <a class="btn btn-info" href="{{ route('doctors.show', $doctor->id) }}">Details</a>
                                 @if($isAdmin)                                
                                     <a class="btn btn-primary" href="{{ route('doctors.edit', $doctor->id) }}">Edit</a>

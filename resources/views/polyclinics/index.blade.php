@@ -35,8 +35,8 @@
                             </td>
                             @if($isAdmin)
                             <td>
-                                <form action="#" method="POST">
-                                    <a class="btn btn-primary" href="#">Edit</a>
+                                <form action="{{ route('polyclinics.destroy', $polyclinic->id) }}" method="POST">
+                                    <a class="btn btn-primary" href="{{ route('polyclinics.edit', $polyclinic->id) }}">Edit</a>
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger">Delete</button>
