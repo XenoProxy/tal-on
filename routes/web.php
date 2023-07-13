@@ -28,4 +28,5 @@ Route::get('/success/{id}', [App\Http\Controllers\AppointmentController::class, 
 
 Route::middleware(['auth'])->group(function (){
     Route::resource('account', App\Http\Controllers\UserController::class);
+    Route::resource('admin', App\Http\Controllers\AdminController::class);
 });

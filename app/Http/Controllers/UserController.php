@@ -17,7 +17,7 @@ class UserController extends Controller
         $appointments = Appointment::where('user_id', $user->id)->get();
         $polyclinics = Polyclinic::all()->toArray();
         if(auth()->id() == 1) {
-            return view('admin.index');
+            return redirect()->route('admin.index');
         }
         return view('account.index', compact('user', 'appointments', 'polyclinics'));
     } 
