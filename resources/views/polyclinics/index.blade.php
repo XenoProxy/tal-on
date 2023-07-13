@@ -20,6 +20,9 @@
                             <th>Address</th>
                             <th>Contacts</th>
                             <th>Order ticket</th>
+                            @if($isAdmin)
+                                <th>Actions</th>
+                            @endif
                         </tr>
                         
                         @foreach ($polyclinics as $polyclinic)
@@ -30,6 +33,16 @@
                             <td>
                                 <a class="btn btn-info" href="{{ route('polyclinics.show', $polyclinic->id) }}">Order</a>
                             </td>
+                            @if($isAdmin)
+                            <td>
+                                <form action="#" method="POST">
+                                    <a class="btn btn-primary" href="#">Edit</a>
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </td>
+                            @endif
                         </tr>
                         @endforeach
                     </table>

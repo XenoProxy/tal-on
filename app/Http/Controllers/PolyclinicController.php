@@ -23,7 +23,13 @@ class PolyclinicController extends Controller
     {
         $polyclinics = Polyclinic::all();
         $contacts = $this->contactsService->phoneNumber();
-        return view('polyclinics.index', compact('polyclinics', 'contacts'));
+
+        $isAdmin = false;
+        if(auth()->id() == 1) {
+            $isAdmin = true;
+        }
+
+        return view('polyclinics.index', compact('polyclinics', 'contacts', 'isAdmin'));
     }    
 
     public function show(Polyclinic $polyclinic)
@@ -55,6 +61,8 @@ class PolyclinicController extends Controller
                 }                
             }    
         }
+
+        
 
         $contacts = $this->contactsService->phoneNumber();
         return view('polyclinics.show', compact(
