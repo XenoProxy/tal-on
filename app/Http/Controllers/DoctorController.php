@@ -11,7 +11,12 @@ class DoctorController extends Controller
     public function index()
     {
         $doctors = Doctor::all();
-        return view('doctors.index', compact('doctors'));
+        $isAdmin = false;
+        if(auth()->id() == 1) {
+            $isAdmin = true;
+        }
+        
+        return view('doctors.index', compact('doctors', 'isAdmin'));
     }   
 
     public function show(Doctor $doctor)

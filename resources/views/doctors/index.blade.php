@@ -19,6 +19,9 @@
                             <th>Name</th>
                             <th>Field</th>
                             <th>Polyclinic</th>
+                            @if($isAdmin)
+                                <th>Actions</th>
+                            @endif
                         </tr>
                         @foreach ($doctors as $doctor)
                         <tr>
@@ -28,8 +31,16 @@
                                 <a href="{{ route('polyclinics.show', $doctor->poly_id) }}">{{ $doctor->polyclinic->name }}</a>
                             </td>
                             <td>
+                            <form action="#" method="POST">
                                 <a class="btn btn-info" href="{{ route('doctors.show', $doctor->id) }}">Details</a>
-                            </td>
+                                @if($isAdmin)                                
+                                    <a class="btn btn-primary" href="#">Edit</a>
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Delete</button>                                
+                                @endif
+                            </form>
+                            </td>                            
                         </tr>
                         @endforeach
                     </table>
