@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Response;
+use Illuminate\Support\Facades\Auth;
 
 use App\Models\Appointment;
 use App\Models\User;
@@ -39,7 +40,7 @@ class AppointmentController extends Controller
     {
         $doctor = $appointment->doctor;
 
-        dd($this->limitationService->appointmentLimit($doctor->id, $appointment->date));
+        //dd($this->limitationService->appointmentLimit($doctor->id, $appointment->date));
 
         return view('appointments.edit', compact('appointment', 'doctor'));
     }
@@ -52,17 +53,10 @@ class AppointmentController extends Controller
             'email' => 'email:rfc',
             'comments' => 'min:0|max:100'            
         ]);
-        $user_name = $request->get('user_name');
-        $user = User::where('name', $user_name)->first();
-        
-        if($user instanceof User){
-            $user_id = $user->id;
-        } else{
-            $user_id = NULL;
-        }
 
         $appointment->update([
-            'user_id' => $user_id,
+            'user_id' => Auth::id(),
+            'patient_name' => $request->get('user_name'),
             'comments' => $request->get('comments')
         ]);
 

@@ -1,5 +1,5 @@
 <x-mail::message>
-# Hello, {{ $user }}!
+# Hello, {{ $name }}!
 # You have successfully made an appointment! 
 
 <x-mail::panel>

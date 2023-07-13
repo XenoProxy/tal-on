@@ -44,7 +44,7 @@ class NotificationOfAppointment extends Mailable
             markdown: 'emails.notification_of_appointment',
             with: [
                 'number' => $this->appointment->id,
-                'user' => $this->appointment->user->name,
+                'name' => $this->appointment->patient_name,
                 'doctor' => $this->appointment->doctor->name,
                 'office' => $this->appointment->doctor->office,
                 'date' => $this->appointment->date,

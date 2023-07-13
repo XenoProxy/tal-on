@@ -30,12 +30,9 @@ class PolyclinicController extends Controller
     {
         // врачи текущей поликлиники
         $polyclinic_doctors = Doctor::where('poly_id', $polyclinic->id)->get();
-
         $appointments = Appointment::all();
-
-        //dd(count($doctors_array));
-        
         $date_time_arr = [];
+
         for($y = 0; $y <= 14; $y++){ 
             foreach($polyclinic_doctors as $doctor){
                 for($i = 0; $i <= 20; $i++){
@@ -52,17 +49,12 @@ class PolyclinicController extends Controller
             if(in_array($date, array_keys($date_time_arr))){
                 if(in_array($doctor, array_keys($date_time_arr[$date]))){
                     if(in_array($time, $date_time_arr[$date][$doctor])){
-
-                        //dd(array_search($time, $date_time_arr[$date][$doctor]));
                         $time_id = array_search($time, $date_time_arr[$date][$doctor]);
                         unset($date_time_arr[$date][$doctor][$time_id]); 
                     }
                 }                
-            }
-            
+            }    
         }
-
-        //dd($date_time_arr);
 
         $contacts = $this->contactsService->phoneNumber();
         return view('polyclinics.show', compact(

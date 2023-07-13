@@ -20,6 +20,7 @@ class Appointment extends Model
         'comments',
         'user_id',
         'doctor_id',
+        'patient_name'
     ];
  
     public function user()
