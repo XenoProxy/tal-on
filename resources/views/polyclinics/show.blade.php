@@ -35,6 +35,14 @@
         </div>
     </div>
     
+    <label for="field-filter"><strong>Filter by field: </strong></label>
+    <select class="field-filter">
+        <option value="">-- Choose the field --</option>
+        @foreach($polyclinic_doctors as $doctor)
+            <option value="{{ $doctor->field }}">{{ $doctor->field }}</option>
+        @endforeach
+    </select>
+
     <div class="row">
     @csrf
     <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
@@ -46,10 +54,12 @@
                             <div class="card-body">
                                 <data class="date" value="{{ $date }}">{{ date("l - d F Y", strtotime($date)) }}</data>
                                 <input type="hidden" class="doctor" value="{{ $doctor }}">  
+                                <input type="hidden" class="field" value="{{ $polyclinic_doctors[$loop->index]->field }}">
                                 
-                                <p>{{ $polyclinic_doctors[$loop->index]->name }}
-                                   {{ $polyclinic_doctors[$loop->index]->field }}
-                                   {{ $polyclinic_doctors[$loop->index]->office }}
+                                <p>
+                                    {{ $polyclinic_doctors[$loop->index]->name }}
+                                    {{ $polyclinic_doctors[$loop->index]->field }}
+                                    {{ $polyclinic_doctors[$loop->index]->office }}
                                 </p>                         
                                 
                                 @foreach ($times as $time)
