@@ -34,6 +34,12 @@
                     <input type="text" name="office" value="{{ $doctor->office }}" class="form-control" placeholder="Office">
                 </div>
             </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Info:</strong>
+                    <textarea name="info" style="height:300px" class="form-control" placeholder="Info">{{ $doctor->info }}</textarea>
+                </div>
+            </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">              
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
