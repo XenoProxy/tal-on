@@ -25,13 +25,13 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Address:</strong>
-                    <textarea class="form-control" style="height:150px" name="address" placeholder="Address">{{ $polyclinic->address }}</textarea>
+                    <input type="text" class="form-control" name="address" placeholder="Address">{{ $polyclinic->address }}</input>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Contacts:</strong>
-                    <input type="text" name="contacts" value="{{ $polyclinic->contacts }}" class="form-control" placeholder="Contacts">
+                    <input type="tel" name="contacts" value="{{ $polyclinic->contacts }}" class="form-control" placeholder="Contacts">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">              
