@@ -33,6 +33,31 @@ class PolyclinicController extends Controller
     }    
 
     /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        return view('polyclinics.create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'address' => 'required',
+            'contacts' => 'required'          
+        ]);
+
+        Polyclinic::create($request->all());
+
+        return redirect()->route('polyclinics.index')
+            ->with('success', 'Polyclinic stored successfully');
+    }
+
+    /**
      * Show the form for editing the specified resource.
      */
     public function edit(Polyclinic $polyclinic)
