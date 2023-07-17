@@ -39,6 +39,12 @@
                 <a href="{{ route('polyclinics.show', $doctor->poly_id) }}">{{ $polyclinic_name }}</a>                
             </div>
         </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Info:</strong>
+                {{ $doctor->info }}             
+            </div>
+        </div>
 
     </div>     
 @endsection

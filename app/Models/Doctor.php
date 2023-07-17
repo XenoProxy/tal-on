@@ -16,6 +16,7 @@ class Doctor extends Model
         'field',
         'poly_id',
         'office',
+        'info'
     ];
 
     public function polyclinic()
