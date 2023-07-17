@@ -42,7 +42,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Contacts:</strong>
-                <input type="tel" name="price" class="form-control" placeholder="Contacts">
+                <input type="tel" name="contacts" class="form-control" placeholder="Contacts">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

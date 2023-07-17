@@ -48,7 +48,7 @@ class PolyclinicController extends Controller
         $request->validate([
             'name' => 'required',
             'address' => 'required',
-            'contacts' => 'required'          
+            'contacts' => 'required|size:12|numeric'          
         ]);
 
         Polyclinic::create($request->all());
@@ -73,7 +73,7 @@ class PolyclinicController extends Controller
         $request->validate([
             'name' => 'required',
             'address' => 'required',
-            'contacts' => 'required' 
+            'contacts' => 'required|size:12|numeric' 
         ]);
 
         $polyclinic->update($request->all());
