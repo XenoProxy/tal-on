@@ -36,13 +36,13 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Address:</strong>
-                <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail"></textarea>
+                <textarea class="form-control" style="height:150px" name="detail" placeholder="Address"></textarea>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Contacts:</strong>
-                <input type="text" name="price" class="form-control" placeholder="Price">
+                <input type="text" name="price" class="form-control" placeholder="Contacts">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
