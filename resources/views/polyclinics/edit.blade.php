@@ -25,7 +25,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Address:</strong>
-                    <input type="text" class="form-control" name="address" placeholder="Address">{{ $polyclinic->address }}</input>
+                    <input type="text" class="form-control" name="address" placeholder="Address" value="{{ $polyclinic->address }}">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">

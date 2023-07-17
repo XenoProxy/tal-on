@@ -7,7 +7,6 @@ use Response;
 use Illuminate\Support\Facades\Auth;
 
 use App\Models\Appointment;
-use App\Models\User;
 use App\Mail\NotificationOfAppointment;
 use Illuminate\Support\Facades\Mail;
 
