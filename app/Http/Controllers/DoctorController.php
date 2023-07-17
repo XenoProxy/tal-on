@@ -20,6 +20,32 @@ class DoctorController extends Controller
     }   
 
     /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        return view('doctors.create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'field' => 'required',
+            'office' => 'required' 
+        ]);
+
+        Doctor::create($request->all());
+
+        return redirect()->route('doctors.index')
+            ->with('success', 'Doctor stored successfully');
+    }
+
+
+    /**
      * Show the form for editing the specified resource.
      */
     public function edit(Doctor $doctor)
