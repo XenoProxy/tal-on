@@ -14,7 +14,7 @@ class Doctor extends Model
     protected $fillable = [
         'name',
         'field',
-        'poly_id ',
+        'poly_id',
         'office',
     ];
 

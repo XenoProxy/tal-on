@@ -24,7 +24,8 @@ class DoctorController extends Controller
      */
     public function create()
     {
-        return view('doctors.create');
+        $polyclinics = Polyclinic::all();
+        return view('doctors.create', compact('polyclinics'));
     }
 
     /**
@@ -34,6 +35,7 @@ class DoctorController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'poly_id' => 'not_in:0',
             'field' => 'required',
             'office' => 'required' 
         ]);

@@ -36,13 +36,24 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Field:</strong>
-                <textarea class="form-control" style="height:150px" name="field" placeholder="Field"></textarea>
+                <input type="text" class="form-control" name="field" placeholder="Field">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Office:</strong>
-                <input type="text" name="office" class="form-control" placeholder="Office">
+                <input type="number" name="office" class="form-control" placeholder="Office">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Polyclinic:</strong>
+                <select name="poly_id" class="field-filter">
+                    <option value="">-- Choose the polyclinic --</option>
+                    @foreach($polyclinics as $polyclinic)                        
+                        <option value="{{ $polyclinic->id }}">{{ $polyclinic->name }}</option>
+                    @endforeach
+                </select>                
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
