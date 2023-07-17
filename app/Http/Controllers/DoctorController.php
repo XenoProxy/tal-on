@@ -44,7 +44,6 @@ class DoctorController extends Controller
             ->with('success', 'Doctor stored successfully');
     }
 
-
     /**
      * Show the form for editing the specified resource.
      */

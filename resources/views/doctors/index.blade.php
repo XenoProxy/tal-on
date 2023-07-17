@@ -6,6 +6,9 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Doctors') }}</div>
+                <div class="pull-right">
+                    <a class="btn btn-success" href="{{ route('doctors.create') }}"> Create New Doctor</a>
+                </div>
 
                 <div class="card-body">
                     @if (session('status'))
