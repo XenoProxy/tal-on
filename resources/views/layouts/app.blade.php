@@ -22,6 +22,8 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light shadow-sm">
             <div class="container">
+                <img class="navbar-brand ico" src="/images/medical-symbol_1988521.png">
+
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ __('Tal-On') }}
                 </a>
@@ -92,7 +94,7 @@
 </body>
 <footer>
     <p>Разработала: Мисюченко И.С.</p>
-    <p>Группа:</p>
+    <p>Группа: BE107</p>
     <p>Почта: <a href="mailto:xenoproxy@yandex.by">xenoproxy@yandex.by</a></p>
     <p id="year"><?php echo(date('Y')) ?></p>
 </footer>

@@ -1,5 +1,9 @@
-html {
+html{
     height: 100%;
+}
+
+#app{
+    min-height: 100%;
 }
 
 a{
@@ -11,6 +15,10 @@ body {
     display: block;
     height: 100%;
     margin: 0px;
+}
+
+.ico{
+    width: 7%;
 }
 
 .navbar{
@@ -49,8 +57,8 @@ body {
 }
 
 .btn-info {
-    width: 20%;
-    height: 60px;    
+    width: 70%;
+    height: 50px; 
     --bs-btn-color: #000;
     --bs-btn-bg: #10fdb7;
     --bs-btn-border-color: #5bf6c7;
@@ -62,16 +70,19 @@ body {
 
 .order-home{
     font-size: large;
+    width: 20%;
+    height: 60px; 
 }
 
+
 footer{
-    height: 15%;
+    height: 150px;
     background-color: #30383e;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    padding-bottom: 0px;
-    padding-top: 30px;
+    padding: 50px;
+    padding-bottom: 10px;
 }
 
 footer p, footer p a{
