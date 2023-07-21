@@ -23,6 +23,15 @@ body {
 
 .navbar{
     background-color: #10fdd3;
+    font-size: larger;
+}
+
+.navbar-brand{
+    font-size: x-large;
+}
+
+main{
+    height: 100px;
 }
 
 /* ================ Home page ================ */

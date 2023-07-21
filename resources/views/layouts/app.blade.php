@@ -91,11 +91,11 @@
             @yield('content')
         </main>
     </div>
+    <footer>
+        <p>Разработала: Мисюченко И.С.</p>
+        <p>Группа: BE107</p>
+        <p>Почта: <a href="mailto:xenoproxy@yandex.by">xenoproxy@yandex.by</a></p>
+        <p id="year"><?php echo(date('Y')) ?></p>
+    </footer>
 </body>
-<footer>
-    <p>Разработала: Мисюченко И.С.</p>
-    <p>Группа: BE107</p>
-    <p>Почта: <a href="mailto:xenoproxy@yandex.by">xenoproxy@yandex.by</a></p>
-    <p id="year"><?php echo(date('Y')) ?></p>
-</footer>
 </html>
