@@ -6,9 +6,11 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Polyclinics') }}</div>
-                <div class="pull-right">
-                    <a class="btn btn-success" href="{{ route('polyclinics.create') }}"> Create New Polyclinic</a>
-                </div>
+                @if($isAdmin)
+                    <div class="pull-right">
+                        <a class="btn btn-success" href="{{ route('polyclinics.create') }}"> Create New Polyclinic</a>
+                    </div>
+                @endif
 
                 <div class="card-body">
                     @if (session('status'))
