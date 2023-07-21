@@ -3,26 +3,11 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
+        <img class="home-banner" src="/images/doctor-hands-in-green-latex-gloves-hold-phone.jpg">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                    
-                </div>
-
-            </div>
-
-            <a class="btn btn-info" href="{{ route('polyclinics.index') }}">Order the ticket</a>
             
         </div>
+        <a class="btn btn-info" href="{{ route('polyclinics.index') }}">Order the ticket</a>
     </div>
 </div>
 @endsection

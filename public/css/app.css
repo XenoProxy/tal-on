@@ -1,4 +1,39 @@
 body {
     display: block;
-    margin: 8px;
+    margin: 0px;
+}
+
+.navbar{
+    background-color: #10fdd3;
+}
+
+/* ================ Home page ================ */
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.home-banner{
+    width: 100%;
+    display:inline-flex;
+}
+
+.btn{    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;        
+}
+
+.btn-info {
+    width: 20%;
+    height: 20%;
+    --bs-btn-color: #000;
+    --bs-btn-bg: #10fdb7;
+    --bs-btn-border-color: #5bf6c7;
+    --bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: #fa4616;
+    --bs-btn-hover-border-color: #f85529;
+    --bs-btn-focus-shadow-rgb: 11,172,204;
 }
