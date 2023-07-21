@@ -8,9 +8,20 @@ body {
 }
 
 /* ================ Home page ================ */
-.container{
+.home-container{
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-info{
+    flex: 0 0 auto;
+    width: 66.66666667%;
+    display: flex;
+    text-align: justify;
+    justify-content: center;
+    font-size: larger;
 }
 
 .home-banner{
@@ -28,7 +39,7 @@ body {
 
 .btn-info {
     width: 20%;
-    height: 20%;
+    height: 60px;    
     --bs-btn-color: #000;
     --bs-btn-bg: #10fdb7;
     --bs-btn-border-color: #5bf6c7;
@@ -36,4 +47,8 @@ body {
     --bs-btn-hover-bg: #fa4616;
     --bs-btn-hover-border-color: #f85529;
     --bs-btn-focus-shadow-rgb: 11,172,204;
+}
+
+.order-home{
+    font-size: large;
 }
