@@ -1,5 +1,15 @@
+html {
+    height: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
 body {
+    min-height: 100%;
     display: block;
+    height: 100%;
     margin: 0px;
 }
 
@@ -22,6 +32,7 @@ body {
     text-align: justify;
     justify-content: center;
     font-size: larger;
+    padding: 30px;
 }
 
 .home-banner{
@@ -51,4 +62,24 @@ body {
 
 .order-home{
     font-size: large;
+}
+
+footer{
+    height: 15%;
+    background-color: #30383e;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding-bottom: 0px;
+    padding-top: 30px;
+}
+
+footer p, footer p a{
+    color: #f0c183;
+    font-size: medium;
+    font-style: normal;    
+}
+
+footer #year{
+    position: relative;
 }
