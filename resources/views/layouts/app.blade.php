@@ -23,10 +23,10 @@
         <nav class="navbar navbar-expand-md navbar-light shadow-sm">
             <div class="container">
                 <img class="navbar-brand ico" src="/images/medical-symbol_1988521.png">
-
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ __('Tal-On') }}
                 </a>
+                
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>

@@ -17,22 +17,39 @@ body {
     margin: 0px;
 }
 
+
+.navbar{
+    /* background-color: #10fdd3; */
+    background-image: url("../images/copy-space-tablets-with-daily-pills-on-desk.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100% 40%;
+    font-size: larger;
+}
+
 .ico{
     width: 7%;
 }
 
-.navbar{
-    background-color: #10fdd3;
-    font-size: larger;
-}
-
-.navbar-brand{
+a.navbar-brand{
     font-size: x-large;
+    position: relative;
+    top: 30%;
+    left: 40%;
 }
 
-main{
-    height: 100px;
+@media screen and (max-width: 1000px) {
+    .ico{
+        width: 12%;
+    }
+
+    a.navbar-brand{
+        font-size: x-large;
+        position: relative;
+        left: 20%;
+    }
 }
+
 
 /* ================ Home page ================ */
 .home-container{
@@ -54,7 +71,7 @@ main{
 
 .home-banner{
     width: 100%;
-    display:inline-flex;
+    display: inline-flex;
 }
 
 .btn{    
