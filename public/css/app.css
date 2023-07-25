@@ -116,6 +116,37 @@ a.navbar-brand{
 /* ================ Polyclinic index ================ */
 
 
+.table{
+    font-size: larger;
+    width: 60%;
+    border-top: 7px solid #f35814;
+}
+
+tr{
+    text-align: center;
+}
+
+
+.polyclinic-info{
+    flex: 0 0 auto;
+    width: 66%;
+    display: flex;
+    text-align: justify;
+    justify-content: center;
+    font-size: larger;
+    padding: 30px;
+}
+
+@media screen and (max-width: 1000px) {
+    .table{
+        width: 90%;
+    }
+
+    .polyclinic-info{
+        flex: 0 0 auto;
+        width: 90%;
+    }
+}
 
 /* ================ Footer ================ */
 
