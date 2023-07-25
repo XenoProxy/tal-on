@@ -3,9 +3,12 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-6">
             <div class="card">
-                <div class="card-header">{{ __('You have successfully made an appointment!') }}</div>
+                <div class="card-header">
+                    <img class="card-ico" src="/images/mark_10099892.png">
+                    {{ __('You have successfully made an appointment!') }}                    
+                </div>
 
                 <div class="card-body">
                     <p>Your appointment's number <b>{{ $appointment->id }}</b></p>
@@ -17,7 +20,7 @@
 
                     <p>We'll expect you at that time.</p>
                     
-                    <a class="btn btn-info" href="{{ route('home') }}">Home</a>
+                    <a class="btn btn-info btn-card" href="{{ route('home') }}">Home</a>
                 </div>
             </div>            
         </div>

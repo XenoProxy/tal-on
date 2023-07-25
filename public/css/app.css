@@ -130,7 +130,6 @@ td.polyclinic-name{
     text-align: left;
 }
 
-
 .polyclinic-info{
     flex: 0 0 auto;
     width: 66%;
@@ -156,6 +155,31 @@ td.polyclinic-name{
 
 td.doctor-name{
     text-align: left;
+}
+
+/* ================ Success page ================ */
+
+.card{
+    font-size: large;
+    margin-top: 50px;
+}
+
+.card-ico{
+    width: 5%;
+    margin-right: 10px;
+}
+
+.card-header{   
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    background-color:#d6f4a5;
+    font-weight: 500;
+}
+
+.btn-card{
+    width: 30%;
+    font-size: large;
 }
 
 /* ================ Footer ================ */
