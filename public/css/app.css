@@ -19,7 +19,7 @@ body {
 
 
 .navbar{
-    /* background-color: #10fdd3; */
+    background-color: #10fdd3;
     background-image: url("../images/copy-space-tablets-with-daily-pills-on-desk.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -29,6 +29,8 @@ body {
 
 .ico{
     width: 7%;
+    position: relative;
+    left: 40%;
 }
 
 a.navbar-brand{
@@ -41,12 +43,22 @@ a.navbar-brand{
 @media screen and (max-width: 1000px) {
     .ico{
         width: 12%;
+        position: relative;
+        left: 20%;
     }
 
     a.navbar-brand{
         font-size: x-large;
         position: relative;
         left: 20%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .ico{
+        width: 12%;
+        position: relative;
+        left: 40%;
     }
 }
 
