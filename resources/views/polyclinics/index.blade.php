@@ -16,7 +16,7 @@
         @endif
 
 
-        <table class="table table-bordered">
+        <table class="table">
             <tr>
                 <th>Name</th>
                 <th>Address</th>
@@ -29,7 +29,7 @@
             
             @foreach ($polyclinics as $polyclinic)
             <tr>
-                <td>{{ $polyclinic->name }}</td>
+                <td class="polyclinic-name">{{ $polyclinic->name }}</td>
                 <td>{{ $polyclinic->address }}</td>
                 <td>{{ $contacts[$loop->index] }}</td>
                 <td>

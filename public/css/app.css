@@ -113,7 +113,7 @@ a.navbar-brand{
     height: 60px; 
 }
 
-/* ================ Polyclinic index ================ */
+/* ================ Polyclinic table ================ */
 
 
 .table{
@@ -124,6 +124,10 @@ a.navbar-brand{
 
 tr{
     text-align: center;
+}
+
+td.polyclinic-name{
+    text-align: left;
 }
 
 
@@ -146,6 +150,12 @@ tr{
         flex: 0 0 auto;
         width: 90%;
     }
+}
+
+/* ================ Doctor table ================ */
+
+td.doctor-name{
+    text-align: left;
 }
 
 /* ================ Footer ================ */
