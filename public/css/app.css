@@ -176,8 +176,6 @@ td.doctor-name{
 
 /* ================ Doctor Show ================ */
 
-
-
 .btn-back{
     margin-left: 250px;
     height: 50px;
@@ -185,7 +183,7 @@ td.doctor-name{
     font-size: 18px;
 }
 
-.doctor-name{
+.doctor-name-show{
     display: flex;    
     justify-content: center;
     border-bottom: 7px solid #f35814;
@@ -196,7 +194,7 @@ td.doctor-name{
 .doctor-container{
     width: 100%;
     padding-left: 250px;
-    padding-right: 250px;
+    padding-right: 250px;  
 }
 
 .doctor-photo{

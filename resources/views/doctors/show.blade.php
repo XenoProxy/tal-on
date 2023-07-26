@@ -8,7 +8,7 @@
         <a class="btn btn-primary btn-back" href="{{ route('doctors.index') }}"> Back</a>
     </div>
     <div class="doctor-container">    
-    <h2 class="show-doctor doctor-name">{{ $doctor->name }}</h2>     
+    <h2 class="show-doctor doctor-name-show">{{ $doctor->name }}</h2>     
         <img class="doctor-photo" src="https://via.placeholder.com/250x300" alt="">
                     
         <div class="info-item">
