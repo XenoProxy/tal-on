@@ -176,35 +176,43 @@ td.doctor-name{
 
 /* ================ Doctor Show ================ */
 
+
+
 .btn-back{
+    margin-left: 250px;
+    height: 50px;
     width: 10%;
+    font-size: 18px;
+}
+
+.doctor-name{
+    display: flex;    
+    justify-content: center;
+    border-bottom: 7px solid #f35814;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .doctor-container{
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
+    padding-left: 250px;
+    padding-right: 250px;
 }
 
-.doctor-name{
-    border-bottom: 7px solid #f35814
+.doctor-photo{
+    float: right;
 }
 
-.doctor-info{
-    display: flex;
-    flex-direction: column;
+.info-item{
+    font-size: 20px
 }
 
 .doctor-summary{
-    flex: 0 0 auto;
-    width: 66.66666667%;
-    display: flex;
+    display: inline-flex;
     text-align: justify;
     justify-content: center;
     font-size: larger;
-    padding: 30px;
+    padding-top: 30px;
 }
 
 /* ================ Success page ================ */
