@@ -1,50 +1,35 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="doctor-container"> 
+    <h2 class="show-doctor">{{ $doctor->name }}</h2>
 
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div id="isLiked" style="display:none;"></div>
-            <div class="pull-left">
-                <h2> Show Doctor</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('doctors.index') }}"> Back</a>
-            </div>
-        </div>
+    <div class="pull-right">
+        <a class="btn btn-primary btn-back" href="{{ route('doctors.index') }}"> Back</a>
     </div>
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Name:</strong>
-                {{ $doctor->name }}
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Field:</strong>
-                {{ $doctor->field }}
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Office:</strong>
-                {{ $doctor->office }}
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Polyclinic:</strong>
-                <a href="{{ route('polyclinics.show', $doctor->poly_id) }}">{{ $polyclinic_name }}</a>                
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Info:</strong>
-                {{ $doctor->info }}             
-            </div>
+    <div class="doctor-info">
+                
+        <div class="info-item">
+            <strong>Field:</strong>
+            {{ $doctor->field }}
         </div>
 
-    </div>     
+        <div class="info-item">
+            <strong>Office:</strong>
+            {{ $doctor->office }}
+        </div>
+
+        <div class="info-item">
+            <strong>Polyclinic:</strong>
+            <a href="{{ route('polyclinics.show', $doctor->poly_id) }}">{{ $polyclinic_name }}</a>                
+        </div>        
+
+    </div>
+     
+    <div class="doctor-summary">
+        <strong>Info:</strong>
+        {{ $doctor->info }}
+    </div>
+</div>    
 @endsection

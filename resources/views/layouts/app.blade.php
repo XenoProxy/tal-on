@@ -86,10 +86,12 @@
                 </div>
             </div>
         </nav>
-
-        <main class="py-4">
+        
+        
+        <main class="py-4">            
             @yield('content')
         </main>
+        <img class="home-banner" src="/images/doctor-hands-in-green-latex-gloves-hold-phone.jpg">
     </div>
     <footer>
         <p>Разработала: Мисюченко И.С.</p>
