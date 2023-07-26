@@ -31,14 +31,14 @@ body {
 .ico{
     width: 7%;
     position: relative;
-    left: 40%;
+    left: 45%;
 }
 
 a.navbar-brand{
     font-size: x-large;
     position: relative;
     top: 30%;
-    left: 40%;
+    left: 45%;
 }
 
 @media screen and (max-width: 1000px) {
@@ -83,12 +83,15 @@ a.navbar-brand{
 }
 
 .home-banner{
-    width: 90%;
-    display: inline-flex;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;  
 }
 
 .btn{    
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
@@ -114,7 +117,6 @@ a.navbar-brand{
 }
 
 /* ================ Polyclinic table ================ */
-
 
 .table{
     font-size: larger;
@@ -157,6 +159,35 @@ td.doctor-name{
     text-align: left;
 }
 
+/* ================ Doctor Show ================ */
+
+.btn-back{
+    width: 10%;
+}
+
+.doctor-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+.doctor-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.doctor-summary{
+    flex: 0 0 auto;
+    width: 66.66666667%;
+    display: flex;
+    text-align: justify;
+    justify-content: center;
+    font-size: larger;
+    padding: 30px;
+}
+
 /* ================ Success page ================ */
 
 .card{
@@ -177,9 +208,15 @@ td.doctor-name{
     font-weight: 500;
 }
 
+.card-body{
+    display: flex;
+    flex-direction: column;
+}
+
 .btn-card{
     width: 30%;
     font-size: large;
+    justify-self: center;
 }
 
 /* ================ Footer ================ */
