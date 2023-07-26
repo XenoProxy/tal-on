@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="doctor-container"> 
-    <h2 class="show-doctor">{{ $doctor->name }}</h2>
+    <h2 class="show-doctor doctor-name">{{ $doctor->name }}</h2>
 
     <div class="pull-right">
         <a class="btn btn-primary btn-back" href="{{ route('doctors.index') }}"> Back</a>

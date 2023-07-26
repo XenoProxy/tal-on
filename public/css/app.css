@@ -188,6 +188,10 @@ td.doctor-name{
     align-items: center;
 }
 
+.doctor-name{
+    border-bottom: 7px solid #f35814
+}
+
 .doctor-info{
     display: flex;
     flex-direction: column;
