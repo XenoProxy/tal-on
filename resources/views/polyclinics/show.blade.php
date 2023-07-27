@@ -18,16 +18,13 @@
             </div>
         </div>
         
-        <div class="filter">
-            <label for="field-filter"><strong>Filter by field: </strong></label>
-            <select class="select">
-                <option disabled>Choose the filter</option>
-                @foreach($polyclinic_doctors as $doctor)
-                    <option value="{{ $doctor->field }}">{{ $doctor->field }}</option>
-                @endforeach
-            </select>
-        </div>
-        
+        <label for="field-filter"><strong>Filter by field: </strong></label>
+        <select class="select">
+            <option value="">-- Choose the field --</option>
+            @foreach($polyclinic_doctors as $doctor)
+                <option value="{{ $doctor->field }}">{{ $doctor->field }}</option>
+            @endforeach
+        </select>
 
         <div class="row">
         @csrf
