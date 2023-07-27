@@ -2,35 +2,22 @@
 
 @section('content')
     <div class="container apnt-container">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2> Show Polyclinic</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('polyclinics.index') }}"> Back</a>
-            </div>
-        </div>
+    <a class="btn btn-primary btn-back" href="{{ route('polyclinics.index') }}"> Back</a>
+        <div class="appointment-head">
+            <h2 class="polyclinic-name-show">{{ $polyclinic->name }}</h2>
 
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Name:</strong>
-                    {{ $polyclinic->name }}
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
+            <div class="row">
+                <div class="info-item">
                     <strong>Address:</strong>
                     {{ $polyclinic->address }}
                 </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
+                <div class="info-item">
                     <strong>Contacts:</strong>
                     {{ $contacts[$polyclinic->id-1] }}
                 </div>
             </div>
         </div>
+        
         <div class="filter">
             <label for="field-filter"><strong>Filter by field: </strong></label>
             <select class="field-filter">

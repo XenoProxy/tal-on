@@ -1,13 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    
-
+<div class="container">    
+    <div class="doctor-container">  
     <div class="pull-right">
         <a class="btn btn-primary btn-back" href="{{ route('doctors.index') }}"> Back</a>
-    </div>
-    <div class="doctor-container">    
+    </div>  
     <h2 class="show-doctor doctor-name-show">{{ $doctor->name }}</h2>     
         <img class="doctor-photo" src="https://via.placeholder.com/250x300" alt="">
                     

@@ -98,7 +98,7 @@ class PolyclinicController extends Controller
         $appointments = Appointment::all();
         $date_time_arr = [];
 
-        for($y = 0; $y <= 14; $y++){ 
+        for($y = 0; $y <= 7; $y++){ 
             foreach($polyclinic_doctors as $doctor){
                 for($i = 0; $i <= 20; $i++){
                     $date_time_arr[date("Y-m-d", time() + 86400*$y)][$doctor->id][] = date("H:i:s", 1687939200 + 900*$i);
