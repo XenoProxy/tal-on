@@ -213,6 +213,17 @@ td.doctor-name{
     padding-top: 30px;
 }
 
+@media screen and (max-width: 1000px) {
+    .doctor-container{
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;  
+    }
+    .btn-back{
+        margin-left: 0px;
+    }
+}
+
 /* ================ Success page ================ */
 
 .card{
