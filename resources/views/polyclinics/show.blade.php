@@ -20,7 +20,7 @@
         
         <label for="field-filter"><strong>Filter by field: </strong></label>
         <select class="select">
-            <option value="">-- Choose the field --</option>
+            <option value="">Not Selected</option>
             @foreach($polyclinic_doctors as $doctor)
                 <option value="{{ $doctor->field }}">{{ $doctor->field }}</option>
             @endforeach

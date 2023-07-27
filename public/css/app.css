@@ -246,6 +246,11 @@ td.doctor-name{
     font-size: 18px;
 }
 
+.select {
+    border: 1px solid #ced4da;
+    padding: 5px 10px;
+}
+
 .appointment{
     display: flex;
     flex-direction: row;
