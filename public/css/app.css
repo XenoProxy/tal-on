@@ -224,7 +224,13 @@ td.doctor-name{
     }
 }
 
-/* ================ Success page ================ */
+/* ================ Appointments (Polyclinic show) ================ */
+
+.apnt-container{
+    width: 100%;
+    padding-left: 250px;
+    padding-right: 250px;  
+}
 
 .appointment{
     display: flex;
@@ -241,6 +247,14 @@ td.doctor-name{
     width: 100%;
     padding: 10px;
     font-size: 18px;
+}
+
+@media screen and (max-width: 1000px) {
+    .apnt-container{
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;  
+    }
 }
 
 /* ================ Success page ================ */
