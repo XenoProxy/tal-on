@@ -51,20 +51,18 @@
                 <div class="row justify-content-left" style="justify-content: left; margin: 4px;">
                     <div class="col-md-8">
                         <div class="card">
-                            <div class="card-body">
-                                <data class="date" value="{{ $date }}">{{ date("l - d F Y", strtotime($date)) }}</data>
-                                <input type="hidden" class="doctor" value="{{ $doctor }}">  
-                                <input type="hidden" class="field" value="{{ $polyclinic_doctors[$loop->index]->field }}">
-                                
-                                <p>
-                                    {{ $polyclinic_doctors[$loop->index]->name }}
-                                    {{ $polyclinic_doctors[$loop->index]->field }}
-                                    {{ $polyclinic_doctors[$loop->index]->office }}
-                                </p>                         
-                                
+                            <data class="date" value="{{ $date }}">{{ date("l - d F Y", strtotime($date)) }}</data>
+                            <input type="hidden" class="doctor" value="{{ $doctor }}">  
+                            <input type="hidden" class="field" value="{{ $polyclinic_doctors[$loop->index]->field }}">
+                            <p>
+                                {{ $polyclinic_doctors[$loop->index]->name }}
+                                {{ $polyclinic_doctors[$loop->index]->field }}
+                                {{ $polyclinic_doctors[$loop->index]->office }}
+                            </p>                            
+                            <div class="appointment">
                                 @foreach ($times as $time)
                                     <span class="time">                                        
-                                        <button class="btn btn-info" style="margin: 2px;" name="time" value="{{ $time }}">{{ date("H:i", strtotime($time)) }}</button>
+                                        <button class="btn btn-info apnt-btn" style="margin: 2px;" name="time" value="{{ $time }}">{{ date("H:i", strtotime($time)) }}</button>
                                     </span>                                        
                                 @endforeach
                             </div>

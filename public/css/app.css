@@ -226,6 +226,25 @@ td.doctor-name{
 
 /* ================ Success page ================ */
 
+.appointment{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.time{
+    margin: 5px;
+}
+
+.apnt-btn{
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+}
+
+/* ================ Success page ================ */
+
 .card{
     font-size: large;
     margin-top: 50px;
