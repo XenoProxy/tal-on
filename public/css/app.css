@@ -323,7 +323,22 @@ td.doctor-name{
 
 .form-control{
     background-color: #d6c696;
+    border: 1px solid #ab9575;
+    color: #191c1f;
 }
+
+.form-control::placeholder {
+    color: #212529;
+    opacity: 0.6;
+}
+
+.form-control:focus {
+    color: #191c1f;
+    background-color: #fff9e8;
+    border-color: #e68860;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem #db8966;
+  }
 
 .submit-btn{
     width: 100%;
