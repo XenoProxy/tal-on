@@ -325,11 +325,12 @@ td.doctor-name{
     background-color: #d6c696;
     border: 1px solid #ab9575;
     color: #191c1f;
+    
 }
 
 .form-control::placeholder {
     color: #212529;
-    opacity: 0.6;
+    opacity: 0.7;
 }
 
 .form-control:focus {
@@ -338,7 +339,38 @@ td.doctor-name{
     border-color: #e68860;
     outline: 0;
     box-shadow: 0 0 0 0.2rem #db8966;
-  }
+}
+
+
+
+.text-field__icon {
+    position: relative;
+}
+
+.text-field__icon::before {
+    content: '';
+    color: #212529;
+    opacity: 0.5;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    left: 0.625rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.text-field__icon .form-control {
+    padding-left: 2rem;
+}
+
+/* email значок */
+.text-field__icon_email::before {
+    content: '@';
+}
+
+
 
 .submit-btn{
     width: 100%;

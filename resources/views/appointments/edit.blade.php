@@ -52,7 +52,9 @@
                 </div>
                 <div class="form-item">
                     <strong>Email:</strong>
-                    <input type="text" name="user_contacts" class="form-control" placeholder="Email">
+                    <div class="text-field__icon text-field__icon_email">
+                        <input type="text" name="user_contacts" class="form-control" placeholder="Email">
+                    </div>
                 </div>
                 <div class="form-item">
                     <strong>Comments:</strong>
