@@ -288,13 +288,34 @@ td.doctor-name{
 
 .form-container{
     display: flex;
-    padding-right: 210px; 
     flex-direction: column;
     flex-wrap: wrap;
 }
 
 .form-item{
-    
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.submit-btn{
+    width: 100%;
+    height: 60px;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #1ebc39;
+    --bs-btn-border-color: #40ed5d;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #fa4616;
+    --bs-btn-hover-border-color: #f85529;
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #35ce4f;
+    --bs-btn-active-border-color: #35ce4f;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg:  #3de95a;
+    --bs-btn-disabled-border-color:  #3de95a;
 }
 
 /* ================ Success page ================ */

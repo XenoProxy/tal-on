@@ -44,16 +44,16 @@
                 <strong>Name:</strong>
                 <input type="text" name="user_name" class="form-control" placeholder="Name">
             </div>
-            <div class="form-item"">
+            <div class="form-item">
                 <strong>Email:</strong>
                 <input type="text" name="user_contacts" class="form-control" placeholder="Email">
             </div>
-            <div class="form-item"">
+            <div class="form-item">
                 <strong>Comments:</strong>
                 <textarea class="form-control" style="height:100px" name="comments" placeholder="Comments"></textarea>
             </div>            
-            <div class="sumit-btn text-center">              
-                <button type="submit" class="btn btn-primary">Order the ticket</button>
+            <div class="text-center">              
+                <button type="submit" class="btn submit-btn">Order the ticket</button>
             </div>
         </div>
     </form>
