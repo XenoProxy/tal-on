@@ -18,7 +18,7 @@
             </div>
         </div>
         
-        <label for="field-filter"><strong>Filter by field: </strong></label>
+        <label class="select" for="select"><strong>Filter by field: </strong></label>
         <select class="select">
             <option value="">Not Selected</option>
             @foreach($polyclinic_doctors as $doctor)
