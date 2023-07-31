@@ -2,6 +2,17 @@
 
 @section('content')
 <div class="container">
+    
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif 
+
     <a class="btn btn-primary btn-back" href="{{ url()->previous() }}"> Back</a>
 
     <div class="apnt-edit-container">

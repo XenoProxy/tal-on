@@ -44,7 +44,7 @@ class AppointmentController extends Controller
 
         $request->validate([
             'user_name' => 'required',
-            'email' => 'email:rfc',
+            'email' => 'email:rfc|required',
             'comments' => 'min:0|max:100'            
         ]);
 
