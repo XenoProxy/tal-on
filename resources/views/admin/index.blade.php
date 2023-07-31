@@ -12,16 +12,6 @@
     </div>
 
     <div class="row">        
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <a class="btn btn-info" href="{{ route('polyclinics.index') }}">Add Polyclinic</a>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <a class="btn btn-info" href="{{ route('doctors.index') }}">Add Doctor</a>
-            </div>
-        </div>
         <div class="col-xs-12 col-sm-12 col-md-8">
             <div class="card">
                 <div class="card-header"><strong>{{ __('My appointments') }}</strong></div>

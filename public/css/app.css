@@ -194,8 +194,37 @@ td.polyclinic-name{
 
 /* ================ Doctor table ================ */
 
+.doctor-table-container {
+    width: 100%;
+    margin-left: 250px;
+}
+
+.btn-success{    
+    width: 15%; 
+    height: 40px;
+    margin-bottom: 20px;
+}
+
 td.doctor-name{
     text-align: left;    
+}
+
+.btn-edit, .btn-danger{
+    width: 40%;
+    height: 40px;
+    margin: 5px
+}
+
+@media screen and (max-width: 1000px) {
+    .doctor-table-container{
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .btn-edit, .btn-danger{
+        width: 70%;
+    }
 }
 
 /* ================ Doctor Show ================ */
