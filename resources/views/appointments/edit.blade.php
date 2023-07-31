@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    
+
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -59,17 +59,17 @@
             <div class="form-container">
                 <div class="form-item">
                     <strong>Name:</strong>
-                    <input type="text" name="user_name" class="form-control" placeholder="Name">
+                    <input type="text" name="user_name" class="form-control form-edit" placeholder="Name">
                 </div>
                 <div class="form-item">
                     <strong>Email:</strong>
                     <div class="text-field__icon text-field__icon_email">
-                        <input type="text" name="user_contacts" class="form-control" placeholder="Email">
+                        <input type="text" name="user_contacts" class="form-control form-edit" placeholder="Email">
                     </div>
                 </div>
                 <div class="form-item">
                     <strong>Comments:</strong>
-                    <textarea class="form-control" style="height:100px" name="comments" placeholder="Comments"></textarea>
+                    <textarea class="form-control form-edit" style="height:100px" name="comments" placeholder="Comments"></textarea>
                 </div>            
                 <div class="text-center">              
                     <button type="submit" class="btn submit-btn">Order the ticket</button>

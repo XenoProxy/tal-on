@@ -389,19 +389,19 @@ td.doctor-name{
     margin-bottom: 20px;
 }
 
-.form-control{
+.form-edit{
     background-color: #d6c696;
     border: 1px solid #ab9575;
     color: #191c1f;
     
 }
 
-.form-control::placeholder {
+.form-edit::placeholder {
     color: #212529;
     opacity: 0.7;
 }
 
-.form-control:focus {
+.form-edit:focus {
     color: #191c1f;
     background-color: #fff9e8;
     border-color: #e68860;
@@ -511,6 +511,11 @@ td.doctor-name{
 }
 
 /* ================ Account ================ */
+
+.btn-login-register{
+    height: 30px;
+    width: 70px;
+}
 
 .user-info{
     margin-top: 30px;
