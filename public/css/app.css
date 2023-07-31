@@ -194,6 +194,46 @@ td.polyclinic-name{
     }
 }
 
+/* ================ Polyclinic edit ================ */
+
+.edit-container {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-left: 220px;
+    margin-right: 250px;
+}
+
+.edit-create-head {
+    display: flex;
+    justify-content: center;
+    border-bottom: 7px solid #f35814;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.polyclinic-form{
+    margin-top: 30px;
+    margin-left: 90px;
+    margin-right: 90px;
+}
+
+.admin-submit-btn{
+    width: 40%;
+    height: 40px;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #1ebc39;
+    --bs-btn-border-color: #40ed5d;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #fa4616;
+    --bs-btn-hover-border-color: #f85529;
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+}
+
 /* ================ Doctor table ================ */
 
 .table-container {
