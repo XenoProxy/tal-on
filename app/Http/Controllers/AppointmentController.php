@@ -10,18 +10,15 @@ use App\Models\Appointment;
 use App\Mail\NotificationOfAppointment;
 use Illuminate\Support\Facades\Mail;
 
-use App\Services\Appointments\LimitationService as LimitationService;
 use App\Services\Polyclinics\ContactsService as ContactsService;
 
 class AppointmentController extends Controller
 {
     protected $contactsService = null;
-    protected $limitationService = null;
 
-    public function __construct(ContactsService $contactsService, LimitationService $limitationService)
+    public function __construct(ContactsService $contactsService)
     {
         $this->contactsService = $contactsService;
-        $this->limitationService = $limitationService;
     }
 
     public function getDoctor(Request $request)
@@ -38,8 +35,6 @@ class AppointmentController extends Controller
     public function edit(Appointment $appointment)
     {
         $doctor = $appointment->doctor;
-
-        //dd($this->limitationService->appointmentLimit($doctor->id, $appointment->date));
 
         return view('appointments.edit', compact('appointment', 'doctor'));
     }
