@@ -159,7 +159,7 @@ display: block;
 
 .table{
     font-size: larger;
-    width: 60%;
+    width: 66%;
     border-top: 7px solid #f35814;
 }
 
@@ -179,6 +179,8 @@ td.polyclinic-name{
     justify-content: center;
     font-size: larger;
     padding: 30px;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 @media screen and (max-width: 1000px) {
@@ -194,9 +196,9 @@ td.polyclinic-name{
 
 /* ================ Doctor table ================ */
 
-.doctor-table-container {
+.table-container {
     width: 100%;
-    margin-left: 250px;
+    margin-left: 220px;
 }
 
 .btn-success{    
@@ -218,6 +220,12 @@ td.doctor-name{
 @media screen and (max-width: 1000px) {
     .doctor-table-container{
         margin-left: 0;
+    }
+
+    .btn-success{    
+        width: 20%; 
+        height: 40px;
+        margin-bottom: 20px;
     }
 }
 

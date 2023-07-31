@@ -2,19 +2,12 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="table-container">
         @if($isAdmin)
-            <div class="pull-right">
+            <div class="create-btn">
                 <a class="btn btn-success" href="{{ route('polyclinics.create') }}"> Create New Polyclinic</a>
             </div>
         @endif
-        
-        @if (session('status'))
-            <div class="alert alert-success" role="alert">
-                {{ session('status') }}
-            </div>
-        @endif
-
 
         <table class="table">
             <tr>
@@ -38,7 +31,7 @@
                 @if($isAdmin)
                 <td>
                     <form action="{{ route('polyclinics.destroy', $polyclinic->id) }}" method="POST">
-                        <a class="btn btn-primary" href="{{ route('polyclinics.edit', $polyclinic->id) }}">Edit</a>
+                        <a class="btn btn-primary btn-edit" href="{{ route('polyclinics.edit', $polyclinic->id) }}">Edit</a>
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Delete</button>

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="doctor-table-container">  
+    <div class="table-container">  
         @if($isAdmin)
             <div class="create-btn">
                 <a class="btn btn-success" href="{{ route('doctors.create') }}"> Create New Doctor</a>
