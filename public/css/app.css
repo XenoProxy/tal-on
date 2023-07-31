@@ -512,17 +512,14 @@ td.doctor-name{
 
 /* ================ Account ================ */
 
-.account-head{
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    margin:auto;
+.user-info{
     margin-top: 30px;
     margin-bottom: 30px;
 }
 
 .my-appointments{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     margin-bottom: 30px;
     
