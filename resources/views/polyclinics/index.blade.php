@@ -26,7 +26,7 @@
                 <td>{{ $polyclinic->address }}</td>
                 <td>{{ $contacts[$loop->index] }}</td>
                 <td>
-                    <a class="btn btn-info" href="{{ route('polyclinics.show', $polyclinic->id) }}">Order</a>
+                    <a class="btn btn-info btn-details" href="{{ route('polyclinics.show', $polyclinic->id) }}">Order</a>
                 </td>
                 @if($isAdmin)
                 <td>

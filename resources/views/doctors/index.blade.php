@@ -25,7 +25,7 @@
                 </td>
                 <td>
                 <form action="{{ route('doctors.destroy', $doctor->id) }}" method="POST">
-                    <a class="btn btn-info" href="{{ route('doctors.show', $doctor->id) }}">Details</a>
+                    <a class="btn btn-info btn-details" href="{{ route('doctors.show', $doctor->id) }}">Details</a>
                     @if($isAdmin)                                
                         <a class="btn btn-primary btn-edit" href="{{ route('doctors.edit', $doctor->id) }}">Edit</a>
                         @csrf
