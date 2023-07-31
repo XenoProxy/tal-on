@@ -62,6 +62,30 @@ a.navbar-brand{
         left: 40%;
     }
 }
+  
+/* Выпадающее содержимое (скрыто по умолчанию) */
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f1f1f1;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+  
+/* Ссылки внутри выпадающего списка */
+.dropdown-content a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+  
+/* Изменение цвета выпадающих ссылок при наведении курсора */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Показать выпадающее меню при наведении курсора */
+.dropdown:hover .dropdown-content {display: block;}
 
 /* ================ Home page ================ */
 
@@ -341,8 +365,6 @@ td.doctor-name{
     box-shadow: 0 0 0 0.2rem #db8966;
 }
 
-
-
 .text-field__icon {
     position: relative;
 }
@@ -369,8 +391,6 @@ td.doctor-name{
 .text-field__icon_email::before {
     content: '@';
 }
-
-
 
 .submit-btn{
     width: 100%;
