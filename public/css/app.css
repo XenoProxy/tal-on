@@ -241,6 +241,21 @@ td.polyclinic-name{
     --bs-btn-focus-shadow-rgb: 49,132,253;
 }
 
+@media screen and (max-width: 1200px) {
+    .edit-container {
+        width: 80%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .polyclinic-form {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
 /* ================ Doctor table ================ */
 
 .table-container {
