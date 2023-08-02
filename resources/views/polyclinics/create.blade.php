@@ -22,24 +22,22 @@
         <form action="{{ route('polyclinics.store') }}" method="post">
             @csrf
             <div class="form-container polyclinic-form">
-                <div class="row">
-                    <div class="form-item">
-                        <strong>Name:</strong>
-                        <input type="text" name="name" class="form-control" placeholder="Name">
-                    </div>
-                
-                    <div class="form-item">
-                        <strong>Address:</strong>
-                        <input type="text" class="form-control" name="detail" placeholder="Address"></input>
-                    </div>
-                
-                    <div class="form-item">
-                        <strong>Contacts:</strong>
-                        <input type="tel" name="contacts" class="form-control" placeholder="Contacts">
-                    </div>
-                
-                    <button type="submit" class="btn btn-primary admin-submit-btn">Submit</button>
+                <div class="form-item">
+                    <strong>Name:</strong>
+                    <input type="text" name="name" class="form-control" placeholder="Name">
                 </div>
+            
+                <div class="form-item">
+                    <strong>Address:</strong>
+                    <input type="text" class="form-control" name="detail" placeholder="Address"></input>
+                </div>
+            
+                <div class="form-item">
+                    <strong>Contacts:</strong>
+                    <input type="tel" name="contacts" class="form-control" placeholder="Contacts">
+                </div>
+            
+                <button type="submit" class="btn btn-primary admin-submit-btn">Submit</button>
             </div>
         </form>
     </div>
