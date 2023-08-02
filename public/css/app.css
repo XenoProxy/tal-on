@@ -110,6 +110,13 @@ display: block;
     background-color: #FFF5DB;
 }
 
+.diuan{
+    width: 40%;
+    float: right;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
 .home-info{
     flex: 0 0 auto;
     width: 66.66666667%;
@@ -247,7 +254,7 @@ td.polyclinic-name{
 }
 
 .btn-success{    
-    width: 15%; 
+    width: 30%; 
     height: 40px;
     margin-bottom: 20px;
 }
