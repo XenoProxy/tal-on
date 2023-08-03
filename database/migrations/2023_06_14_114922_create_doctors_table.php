@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('doctors', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('poly_id');
+            $table->unsignedBigInteger('poly_id')->nullable();
             $table->string('name');
-            $table->string('field');
+            $table->string('field')->nullable();
             $table->timestamps();
 
             $table->foreign('poly_id')->references('id')->on('polyclinics')->onDelete('cascade');

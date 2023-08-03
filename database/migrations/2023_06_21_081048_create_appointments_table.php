@@ -16,8 +16,8 @@ return new class extends Migration
             $table->datetime('start_time');
             $table->datetime('finish_time');
             $table->longText('comments')->nullable();
-            $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('doctor_id')->constrained('doctors');
+            $table->foreignId('user_id')->constrained('users')->nullable();
+            $table->foreignId('doctor_id')->constrained('doctors')->nullable();
             $table->timestamps();
         });
     }
